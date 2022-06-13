@@ -96,7 +96,7 @@ private extension LoginViewController {
         self.view.addSubview(appleLoginButton)
 
         appleLoginButton.snp.makeConstraints { make in
-            make.bottom.equalToSuperview().inset(60)
+            make.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottom).inset(14)
             make.centerX.equalToSuperview()
             make.leading.trailing.equalToSuperview().inset(16)
         }
@@ -108,6 +108,7 @@ private extension LoginViewController {
         gitHubLoginButton.snp.makeConstraints { make in
             make.bottom.equalTo(appleLoginButton.snp.top).offset(-14)
             make.centerX.equalToSuperview()
+            make.height.equalTo(appleLoginButton.snp.height)
             make.leading.trailing.equalToSuperview().inset(16)
         }
     }

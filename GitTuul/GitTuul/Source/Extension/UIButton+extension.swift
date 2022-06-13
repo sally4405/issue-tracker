@@ -12,7 +12,7 @@ extension UIButton {
         plain.baseForegroundColor = .Colors.primary1
 
         let button = UIButton(configuration: plain)
-        
+
         return button
     }
 

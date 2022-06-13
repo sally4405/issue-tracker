@@ -40,7 +40,7 @@ final class IdView: UIView {
         textField.font = .SFProText.regular(17)
         textField.tintColor = .GreyScale.black
         textField.isSecureTextEntry = true
-        
+
         return textField
     }()
 
@@ -121,5 +121,5 @@ private extension IdView {
             make.height.equalToSuperview().multipliedBy(0.5)
         }
     }
-    
+
 }
