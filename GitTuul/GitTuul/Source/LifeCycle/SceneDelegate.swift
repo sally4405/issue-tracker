@@ -25,8 +25,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                     print(NetworkError.failToDecode)
                     return
                 }
-                // MARK: - TODO data handling
-                decodedData
+                self.window?.rootViewController = GitTuulTabBarController(data: decodedData)
             case .failure(let error):
                 // MARK: - TODO 에러처리
                 print(error)
