@@ -3,10 +3,6 @@ import UIKit
 
 final class NetworkManager {
 
-    // MARK: - TODO 값 숨기기
-    let clientID = "cff2f5d079f7cedff5ca"
-    let clientSecret = "e91c11dd4a213c135ea858026fa548d105ed4da9"
-
     static var shared = NetworkManager()
 
     private init() {}

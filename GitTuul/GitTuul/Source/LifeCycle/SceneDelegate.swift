@@ -16,7 +16,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
         let code = URLContexts.first?.url.absoluteString.components(separatedBy: "code=").last ?? ""
-        let endPoint = GithubEndPoint.accessToken(clientID: networkManager.clientID, clientSecret: networkManager.clientSecret, code: code)
+        let endPoint = GithubEndPoint.accessToken(clientID: ClientInformation.clientID, clientSecret: ClientInformation.clientSecret, code: code)
         networkManager.request(endPoint: endPoint) { result in
             switch result {
             case .success(let data):
