@@ -28,6 +28,12 @@ final class LoginViewController: UIViewController {
     private let gitHubLoginButton: UIButton = {
         let image = UIImage(named: "GitHubMark.png")
         let button = UIButton.filledAttributedButton("GitHub 계정으로 로그인", image)
+        let action = UIAction { _ in
+            let networkManager = NetworkManager.shared,
+                endPoint = GithubEndPoint.oauth(clientID: networkManager.clientID, scope: [.repo, .user])
+            networkManager.requestCode(endPoint: endPoint)
+        }
+        button.addAction(action, for: .touchUpInside)
 
         return button
     }()
@@ -49,6 +55,7 @@ final class LoginViewController: UIViewController {
         layoutSignInButton()
         layoutAppleLoginButton()
         layoutGitHubLoginButton()
+
     }
 
 }
