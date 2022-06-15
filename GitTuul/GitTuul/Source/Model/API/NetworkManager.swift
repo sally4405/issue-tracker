@@ -1,5 +1,6 @@
 import Alamofire
 import UIKit
+import RxSwift
 
 final class NetworkManager {
 
@@ -21,28 +22,34 @@ final class NetworkManager {
         }
     }
 
-    func request(endPoint: Requestable, completion: @escaping (Result<Data, NetworkError>) -> Void) {
-
-        guard let url = endPoint.url else {
-            completion(.failure(.invalidUrl))
-            return
-        }
-
-        let request: DataRequest = AF.request(url,
-                                              method: endPoint.method,
-                                              parameters: endPoint.parameter,
-                                              headers: endPoint.headers)
-        request
-            .validate(statusCode: 200..<300)
-            .response { response in
-                if let data = response.data {
-                    completion(.success(data))
-                } else {
-                    completion(.failure(.emptyData))
-                }
-
+    func request<T: Decodable>(endPoint: Requestable) -> Observable<T> {
+        return Observable.create { observer in
+            guard let url = endPoint.url else {
+                observer.onError(NetworkError.invalidUrl)
+                return Disposables.create {}
             }
 
+            let request: DataRequest = AF.request(url,
+                                                  method: endPoint.method,
+                                                  parameters: endPoint.parameter,
+                                                  headers: endPoint.headers)
+            request
+                .validate(statusCode: 200..<300)
+                .response { response in
+                    if let data = response.data {
+                        guard let decodedData = try? JSONDecoder().decode(T.self, from: data) else {
+                            observer.onError(NetworkError.failToDecode)
+                            return
+                        }
+                        observer.onNext(decodedData)
+                        observer.onCompleted()
+                    } else {
+                        observer.onError(NetworkError.emptyData)
+                    }
+                }
+
+            return Disposables.create {}
+        }
     }
 
 }

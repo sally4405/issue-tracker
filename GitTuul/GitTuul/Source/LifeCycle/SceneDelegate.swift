@@ -17,20 +17,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
         let code = URLContexts.first?.url.absoluteString.components(separatedBy: "code=").last ?? ""
         let endPoint = GithubEndPoint.accessToken(clientID: ClientInformation.clientID, clientSecret: ClientInformation.clientSecret, code: code)
-        networkManager.request(endPoint: endPoint) { result in
-            switch result {
-            case .success(let data):
-                guard let decodedData = try? JSONDecoder().decode(GithubEntity.self, from: data) else {
+        _ = networkManager
+            .request(endPoint: endPoint)
+            .subscribe(
+                onNext: { data in
+                    self.window?.rootViewController = GitTuulTabBarController(data: data)
+                }, onError: { error in
                     // MARK: - TODO 에러처리
-                    print(NetworkError.failToDecode)
-                    return
-                }
-                self.window?.rootViewController = GitTuulTabBarController(data: decodedData)
-            case .failure(let error):
-                // MARK: - TODO 에러처리
-                print(error)
-            }
-        }
+                    print(error)
+                })
     }
-
 }
