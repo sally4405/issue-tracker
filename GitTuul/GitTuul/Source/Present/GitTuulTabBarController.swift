@@ -46,7 +46,7 @@ private extension GitTuulTabBarController {
         accountViewController.tabBarItem.image = UIImage(systemName: "person")
         accountViewController.tabBarItem.selectedImage = UIImage(systemName: "person.fill")
 
-        self.viewControllers = [issueViewController, labelViewController, milestoneViewController, accountViewController]
+        viewControllers = [issueViewController, labelViewController, milestoneViewController, accountViewController]
     }
 
 }

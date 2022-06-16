@@ -69,7 +69,7 @@ final class IdView: UIView {
 private extension IdView {
 
     func layoutIdLabel() {
-        self.addSubview(idLabel)
+        addSubview(idLabel)
 
         idLabel.snp.makeConstraints { make in
             make.top.equalToSuperview().inset(12)
@@ -78,7 +78,7 @@ private extension IdView {
     }
 
     func layoutDivider() {
-        self.addSubview(divider)
+        addSubview(divider)
 
         divider.snp.makeConstraints { make in
             make.top.equalTo(idLabel.snp.bottom).offset(10.5)
@@ -89,7 +89,7 @@ private extension IdView {
     }
 
     func layoutPasswordLabel() {
-        self.addSubview(passwordLabel)
+        addSubview(passwordLabel)
 
         passwordLabel.snp.makeConstraints { make in
             make.top.equalTo(divider.snp.bottom).offset(10.5)
@@ -99,7 +99,7 @@ private extension IdView {
     }
 
     func layoutIdTextField() {
-        self.addSubview(idTextField)
+        addSubview(idTextField)
 
         idTextField.snp.makeConstraints { make in
             make.top.equalToSuperview()
@@ -110,7 +110,7 @@ private extension IdView {
     }
 
     func layoutPasswordTextField() {
-        self.addSubview(passwordTextField)
+        addSubview(passwordTextField)
 
         passwordTextField.snp.makeConstraints { make in
             make.top.equalTo(divider.snp.bottom)

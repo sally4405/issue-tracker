@@ -45,7 +45,7 @@ final class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .Custom.backgrounds2
+        view.backgroundColor = .Custom.backgrounds2
 
         layoutIdView()
         layoutTitleLabel()
@@ -62,7 +62,7 @@ final class LoginViewController: UIViewController {
 private extension LoginViewController {
 
     func layoutIdView() {
-        self.view.addSubview(idView)
+        view.addSubview(idView)
 
         idView.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview()
@@ -71,7 +71,7 @@ private extension LoginViewController {
     }
 
     func layoutTitleLabel() {
-        self.view.addSubview(titleLabel)
+        view.addSubview(titleLabel)
 
         titleLabel.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
@@ -81,35 +81,35 @@ private extension LoginViewController {
     }
 
     func layoutLoginButton() {
-        self.view.addSubview(logInButton)
+        view.addSubview(logInButton)
 
         logInButton.snp.makeConstraints { make in
             make.top.equalTo(idView.snp.bottom).offset(16)
-            make.trailing.equalTo(self.view.safeAreaLayoutGuide.snp.centerX)
+            make.trailing.equalTo(view.safeAreaLayoutGuide.snp.centerX)
         }
     }
 
     func layoutSignInButton() {
-        self.view.addSubview(signInButton)
+        view.addSubview(signInButton)
 
         signInButton.snp.makeConstraints { make in
             make.top.equalTo(idView.snp.bottom).offset(16)
-            make.leading.equalTo(self.view.safeAreaLayoutGuide.snp.centerX)
+            make.leading.equalTo(view.safeAreaLayoutGuide.snp.centerX)
         }
     }
 
     func layoutAppleLoginButton() {
-        self.view.addSubview(appleLoginButton)
+        view.addSubview(appleLoginButton)
 
         appleLoginButton.snp.makeConstraints { make in
-            make.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottom).inset(14)
+            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).inset(14)
             make.centerX.equalToSuperview()
             make.leading.trailing.equalToSuperview().inset(16)
         }
     }
 
     func layoutGitHubLoginButton() {
-        self.view.addSubview(gitHubLoginButton)
+        view.addSubview(gitHubLoginButton)
 
         gitHubLoginButton.snp.makeConstraints { make in
             make.bottom.equalTo(appleLoginButton.snp.top).offset(-14)
