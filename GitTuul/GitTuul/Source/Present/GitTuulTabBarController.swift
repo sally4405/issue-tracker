@@ -1,6 +1,6 @@
 import UIKit
 
-class GitTuulTabBarController: UITabBarController {
+final class GitTuulTabBarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
