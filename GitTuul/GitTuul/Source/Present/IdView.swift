@@ -2,12 +2,13 @@ import UIKit
 
 final class IdView: UIView {
 
+    // MARK: - View
+
     private let idLabel: UILabel = {
         let label = UILabel()
         label.text = "아이디"
         label.font = .SFProText.regular(17)
         label.tintColor = .Custom.label1
-
         return label
     }()
 
@@ -16,14 +17,12 @@ final class IdView: UIView {
         label.text = "비밀번호"
         label.font = .SFProText.regular(17)
         label.tintColor = .Custom.label1
-
         return label
     }()
 
     private let divider: UIView = {
         let view = UIView()
         view.backgroundColor = .GreyScale.grey5
-
         return view
     }()
 
@@ -31,7 +30,6 @@ final class IdView: UIView {
         let textField = UITextField()
         textField.font = .SFProText.regular(17)
         textField.tintColor = .GreyScale.black
-
         return textField
     }()
 
@@ -40,7 +38,6 @@ final class IdView: UIView {
         textField.font = .SFProText.regular(17)
         textField.tintColor = .GreyScale.black
         textField.isSecureTextEntry = true
-
         return textField
     }()
 
@@ -66,6 +63,8 @@ final class IdView: UIView {
     }
 
 }
+
+// MARK: - View Layout
 
 private extension IdView {
 

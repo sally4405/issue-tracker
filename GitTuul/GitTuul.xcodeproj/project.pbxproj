@@ -19,6 +19,7 @@
 		6CE96FFD2858794900AD8C63 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE96FFC2858794900AD8C63 /* NetworkError.swift */; };
 		6CE96FFF2858797000AD8C63 /* GithubScope.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE96FFE2858797000AD8C63 /* GithubScope.swift */; };
 		6CE97001285879D000AD8C63 /* Requestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE97000285879D000AD8C63 /* Requestable.swift */; };
+		6CE97021285AF62A00AD8C63 /* ClientInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE97020285AF62A00AD8C63 /* ClientInformation.swift */; };
 		6FA4A7BE2856D3A500846435 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FA4A7BD2856D3A500846435 /* AppDelegate.swift */; };
 		6FA4A7C02856D3A500846435 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FA4A7BF2856D3A500846435 /* SceneDelegate.swift */; };
 		6FA4A7C22856D3A500846435 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FA4A7C12856D3A500846435 /* LoginViewController.swift */; };
@@ -33,7 +34,6 @@
 		6FEA989D285850D400ABA34C /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FEA989C285850D400ABA34C /* NetworkManager.swift */; };
 		6FEA989F28585CE200ABA34C /* GithubEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FEA989E28585CE200ABA34C /* GithubEntity.swift */; };
 		6FEA98A1285861B500ABA34C /* GithubEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FEA98A0285861B500ABA34C /* GithubEndPoint.swift */; };
-		6FEA98A428587DEA00ABA34C /* ClientInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FEA98A328587DEA00ABA34C /* ClientInformation.swift */; };
 		6FEA98A62858815D00ABA34C /* GitTuulTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FEA98A52858815D00ABA34C /* GitTuulTabBarController.swift */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +50,7 @@
 		6CE96FFC2858794900AD8C63 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		6CE96FFE2858797000AD8C63 /* GithubScope.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubScope.swift; sourceTree = "<group>"; };
 		6CE97000285879D000AD8C63 /* Requestable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requestable.swift; sourceTree = "<group>"; };
+		6CE97020285AF62A00AD8C63 /* ClientInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientInformation.swift; sourceTree = "<group>"; };
 		6FA4A7BA2856D3A500846435 /* GitTuul.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitTuul.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FA4A7BD2856D3A500846435 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6FA4A7BF2856D3A500846435 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -61,7 +62,6 @@
 		6FEA989C285850D400ABA34C /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		6FEA989E28585CE200ABA34C /* GithubEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubEntity.swift; sourceTree = "<group>"; };
 		6FEA98A0285861B500ABA34C /* GithubEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubEndPoint.swift; sourceTree = "<group>"; };
-		6FEA98A328587DEA00ABA34C /* ClientInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientInformation.swift; sourceTree = "<group>"; };
 		6FEA98A52858815D00ABA34C /* GitTuulTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitTuulTabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -203,7 +203,7 @@
 		6FEA98A228587DC900ABA34C /* Private */ = {
 			isa = PBXGroup;
 			children = (
-				6FEA98A328587DEA00ABA34C /* ClientInformation.swift */,
+				6CE97020285AF62A00AD8C63 /* ClientInformation.swift */,
 			);
 			path = Private;
 			sourceTree = "<group>";
@@ -322,8 +322,8 @@
 				6FA4A7BE2856D3A500846435 /* AppDelegate.swift in Sources */,
 				6FEA98A1285861B500ABA34C /* GithubEndPoint.swift in Sources */,
 				6CE96FFF2858797000AD8C63 /* GithubScope.swift in Sources */,
-				6FEA98A428587DEA00ABA34C /* ClientInformation.swift in Sources */,
 				6CE96FED2857234000AD8C63 /* UIFont+extension.swift in Sources */,
+				6CE97021285AF62A00AD8C63 /* ClientInformation.swift in Sources */,
 				6FEA989D285850D400ABA34C /* NetworkManager.swift in Sources */,
 				6FEA989F28585CE200ABA34C /* GithubEntity.swift in Sources */,
 				6FA4A7C02856D3A500846435 /* SceneDelegate.swift in Sources */,

@@ -3,6 +3,8 @@ import SnapKit
 
 final class LoginViewController: UIViewController {
 
+    // MARK: - View
+
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.text = "Git-Tuul 🪶"
@@ -10,14 +12,12 @@ final class LoginViewController: UIViewController {
         label.tintColor = .GreyScale.black
         label.textAlignment = .center
         label.sizeToFit()
-
         return label
     }()
 
     private let idView: IdView = {
         let view = IdView()
         view.backgroundColor = .Custom.backgrounds1
-
         return view
     }()
 
@@ -34,14 +34,12 @@ final class LoginViewController: UIViewController {
             networkManager.requestCode(endPoint: endPoint)
         }
         button.addAction(action, for: .touchUpInside)
-
         return button
     }()
 
     private let appleLoginButton: UIButton = {
         let image = UIImage(systemName: "applelogo")
         let button = UIButton.filledAttributedButton("Apple 계정으로 로그인", image)
-
         return button
     }()
 
@@ -55,10 +53,11 @@ final class LoginViewController: UIViewController {
         layoutSignInButton()
         layoutAppleLoginButton()
         layoutGitHubLoginButton()
-
     }
 
 }
+
+// MARK: - View Layout
 
 private extension LoginViewController {
 

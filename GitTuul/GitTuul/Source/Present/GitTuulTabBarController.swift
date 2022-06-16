@@ -11,10 +11,11 @@ class GitTuulTabBarController: UITabBarController {
 
     convenience init(data: GithubEntity) {
         self.init()
-
     }
 
 }
+
+// MARK: - Configure
 
 private extension GitTuulTabBarController {
 

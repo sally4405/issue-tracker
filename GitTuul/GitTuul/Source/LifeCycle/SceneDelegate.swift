@@ -1,6 +1,7 @@
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
+
     let networkManager = NetworkManager.shared
 
     var window: UIWindow?
@@ -27,4 +28,5 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
                     print(error)
                 })
     }
+
 }

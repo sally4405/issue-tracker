@@ -2,10 +2,8 @@ import Foundation
 import Alamofire
 
 enum GithubEndPoint: Requestable {
-
     case oauth(clientID: String, scope: [GitHubScope])
     case accessToken(clientID: String, clientSecret: String, code: String)
-
 }
 
 extension GithubEndPoint {
