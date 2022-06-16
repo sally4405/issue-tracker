@@ -9,15 +9,15 @@ enum GithubEndPoint: Requestable {
 extension GithubEndPoint {
 
     var baseURL: URL? {
-        return URL(string: "https://github.com/login/oauth")
+        return URL(string: "https://github.com")
     }
 
     var path: String {
         switch self {
         case .oauth:
-            return "/authorize"
+            return "/login/oauth/authorize"
         case .accessToken:
-            return "/access_token"
+            return "/login/oauth/access_token"
         }
     }
 
@@ -40,6 +40,8 @@ extension GithubEndPoint {
             return ["client_id": clientID, "scope": scope]
         case .accessToken(let clientID, let clientSecret, let code):
             return ["client_id": clientID, "client_secret": clientSecret, "code": code]
+        default:
+            return [:]
         }
     }
 

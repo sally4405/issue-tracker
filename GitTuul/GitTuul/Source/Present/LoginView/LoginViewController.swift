@@ -1,7 +1,12 @@
 import UIKit
 import SnapKit
+import RxSwift
 
 final class LoginViewController: UIViewController {
+
+    let networkManager = NetworkManager.shared
+
+    var viewModel: LoginViewModel!
 
     // MARK: - View
 
@@ -53,6 +58,12 @@ final class LoginViewController: UIViewController {
         layoutSignInButton()
         layoutAppleLoginButton()
         layoutGitHubLoginButton()
+    }
+
+    convenience init(viewModel: LoginViewModel) {
+        self.init()
+        self.viewModel = viewModel
+        subscribe()
     }
 
 }
@@ -116,6 +127,27 @@ private extension LoginViewController {
             make.centerX.equalToSuperview()
             make.height.equalTo(appleLoginButton.snp.height)
             make.leading.trailing.equalToSuperview().inset(16)
+        }
+    }
+
+}
+
+// MARK: - Subscribe
+
+private extension LoginViewController {
+
+    func subscribe() {
+        viewModel.subscribeEndpoint { [weak self] endPoint in
+            _ = self?.networkManager
+                .request(endPoint: endPoint)
+                .subscribe(
+                    onNext: { (data: GithubEntity) in
+                        self?.networkManager.setToken(data.accessToken)
+                        self?.navigationController?.pushViewController(ViewControllerFactory.tab.make(), animated: true)
+                    }, onError: { error in
+                        // MARK: - TODO 에러처리
+                    }
+                )
         }
     }
 

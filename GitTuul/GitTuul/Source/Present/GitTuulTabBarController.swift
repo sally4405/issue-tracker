@@ -9,10 +9,6 @@ final class GitTuulTabBarController: UITabBarController {
         setup()
     }
 
-    convenience init(data: GithubEntity) {
-        self.init()
-    }
-
 }
 
 // MARK: - Configure
@@ -26,7 +22,7 @@ private extension GitTuulTabBarController {
     }
 
     func setup() {
-        let issueViewController = IssueViewController()
+        let issueViewController = ViewControllerFactory.issue.make()
         issueViewController.tabBarItem.title = "이슈"
         issueViewController.tabBarItem.image = UIImage(systemName: "exclamationmark.circle")
         issueViewController.tabBarItem.selectedImage = UIImage(systemName: "exclamationmark.circle.fill")
