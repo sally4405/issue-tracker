@@ -27,6 +27,8 @@
 		6CE970182859AC8F00AD8C63 /* LabelCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE970172859AC8F00AD8C63 /* LabelCollectionViewDataSource.swift */; };
 		6CE9701A2859ACC700AD8C63 /* LabelCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE970192859ACC700AD8C63 /* LabelCollectionViewCell.swift */; };
 		6CE9701F2859EAFE00AD8C63 /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE9701E2859EAFE00AD8C63 /* PaddingLabel.swift */; };
+		6CE97023285B070600AD8C63 /* IssueEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE97022285B070600AD8C63 /* IssueEntity.swift */; };
+		6CE97026285B095200AD8C63 /* IssueViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE97025285B095200AD8C63 /* IssueViewModel.swift */; };
 		6CE97028285B1A4E00AD8C63 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE97027285B1A4E00AD8C63 /* LoginViewModel.swift */; };
 		6CE9702C285B1BBC00AD8C63 /* NotificationName+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE9702B285B1BBC00AD8C63 /* NotificationName+extension.swift */; };
 		6CE9702E285B1EE500AD8C63 /* ViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE9702D285B1EE500AD8C63 /* ViewControllerFactory.swift */; };
@@ -69,6 +71,8 @@
 		6CE970172859AC8F00AD8C63 /* LabelCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelCollectionViewDataSource.swift; sourceTree = "<group>"; };
 		6CE970192859ACC700AD8C63 /* LabelCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelCollectionViewCell.swift; sourceTree = "<group>"; };
 		6CE9701E2859EAFE00AD8C63 /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
+		6CE97022285B070600AD8C63 /* IssueEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueEntity.swift; sourceTree = "<group>"; };
+		6CE97025285B095200AD8C63 /* IssueViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueViewModel.swift; sourceTree = "<group>"; };
 		6CE97027285B1A4E00AD8C63 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		6CE9702B285B1BBC00AD8C63 /* NotificationName+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotificationName+extension.swift"; sourceTree = "<group>"; };
 		6CE9702D285B1EE500AD8C63 /* ViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerFactory.swift; sourceTree = "<group>"; };
@@ -174,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				6FEA989E28585CE200ABA34C /* GithubEntity.swift */,
+				6CE97022285B070600AD8C63 /* IssueEntity.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -181,6 +186,7 @@
 		6CE9700828596F7900AD8C63 /* IssueView */ = {
 			isa = PBXGroup;
 			children = (
+				6CE97024285B094300AD8C63 /* ViewModel */,
 				6CE9700928596FA400AD8C63 /* IssueViewController.swift */,
 				6CE9700B2859708700AD8C63 /* IssueHeader.swift */,
 				6CE9700D2859709900AD8C63 /* IssueCell.swift */,
@@ -206,6 +212,14 @@
 				6CE9701E2859EAFE00AD8C63 /* PaddingLabel.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		6CE97024285B094300AD8C63 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				6CE97025285B095200AD8C63 /* IssueViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		6CE97029285B1A5A00AD8C63 /* LoginView */ = {
@@ -393,6 +407,7 @@
 				6FA4A7C22856D3A500846435 /* LoginViewController.swift in Sources */,
 				6CE9702E285B1EE500AD8C63 /* ViewControllerFactory.swift in Sources */,
 				6CE96FF92857362A00AD8C63 /* IdView.swift in Sources */,
+				6CE97026285B095200AD8C63 /* IssueViewModel.swift in Sources */,
 				6FA4A7BE2856D3A500846435 /* AppDelegate.swift in Sources */,
 				6FEA98A1285861B500ABA34C /* GithubEndPoint.swift in Sources */,
 				6CE970182859AC8F00AD8C63 /* LabelCollectionViewDataSource.swift in Sources */,
@@ -411,6 +426,7 @@
 				6CE96FF42857282300AD8C63 /* UIColor+extension.swift in Sources */,
 				6FEA98A62858815D00ABA34C /* GitTuulTabBarController.swift in Sources */,
 				6CE9700A28596FA400AD8C63 /* IssueViewController.swift in Sources */,
+				6CE97023285B070600AD8C63 /* IssueEntity.swift in Sources */,
 				6CE970132859719E00AD8C63 /* IssueViewDataSource.swift in Sources */,
 				6CE9701A2859ACC700AD8C63 /* LabelCollectionViewCell.swift in Sources */,
 				6CE97001285879D000AD8C63 /* Requestable.swift in Sources */,

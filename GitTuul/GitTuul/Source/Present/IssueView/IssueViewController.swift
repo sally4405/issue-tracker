@@ -2,6 +2,8 @@ import UIKit
 
 class IssueViewController: UIViewController {
 
+    var viewModel: IssueViewModel!
+
     private lazy var collectionViewDataSource = IssueViewDataSource()
 
     private lazy var collectionView: UICollectionView = {
@@ -15,6 +17,11 @@ class IssueViewController: UIViewController {
         collectionView.automaticallyAdjustsScrollIndicatorInsets = true
         return collectionView
     }()
+
+    convenience init(viewModel: IssueViewModel) {
+        self.init()
+        self.viewModel = viewModel
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -4,6 +4,7 @@ import Alamofire
 enum GithubEndPoint: Requestable {
     case oauth(clientID: String, scope: [GitHubScope])
     case accessToken(clientID: String, clientSecret: String, code: String)
+    case issue
 }
 
 extension GithubEndPoint {
@@ -18,6 +19,8 @@ extension GithubEndPoint {
             return "/login/oauth/authorize"
         case .accessToken:
             return "/login/oauth/access_token"
+        case .issue:
+            return "/issues"
         }
     }
 
@@ -25,6 +28,8 @@ extension GithubEndPoint {
         switch self {
         case .accessToken:
             return [HTTPHeader.accept("application/json")]
+        case.issue:
+            return [HTTPHeader.accept("application/vnd.github.v3+json")]
         default:
             return [HTTPHeader.accept("")]
         }
@@ -51,6 +56,8 @@ extension GithubEndPoint {
             return .get
         case .accessToken:
             return .post
+        case.issue:
+            return .get
         }
     }
 
