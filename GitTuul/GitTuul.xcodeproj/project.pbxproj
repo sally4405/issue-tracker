@@ -20,6 +20,7 @@
 		6CE96FFF2858797000AD8C63 /* GithubScope.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE96FFE2858797000AD8C63 /* GithubScope.swift */; };
 		6CE97001285879D000AD8C63 /* Requestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE97000285879D000AD8C63 /* Requestable.swift */; };
 		6CE97021285AF62A00AD8C63 /* ClientInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE97020285AF62A00AD8C63 /* ClientInformation.swift */; };
+		6CE9701F2859EAFE00AD8C63 /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE9701E2859EAFE00AD8C63 /* PaddingLabel.swift */; };
 		6FA4A7BE2856D3A500846435 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FA4A7BD2856D3A500846435 /* AppDelegate.swift */; };
 		6FA4A7C02856D3A500846435 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FA4A7BF2856D3A500846435 /* SceneDelegate.swift */; };
 		6FA4A7C22856D3A500846435 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FA4A7C12856D3A500846435 /* LoginViewController.swift */; };
@@ -51,6 +52,7 @@
 		6CE96FFE2858797000AD8C63 /* GithubScope.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubScope.swift; sourceTree = "<group>"; };
 		6CE97000285879D000AD8C63 /* Requestable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requestable.swift; sourceTree = "<group>"; };
 		6CE97020285AF62A00AD8C63 /* ClientInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientInformation.swift; sourceTree = "<group>"; };
+		6CE9701E2859EAFE00AD8C63 /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
 		6FA4A7BA2856D3A500846435 /* GitTuul.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitTuul.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FA4A7BD2856D3A500846435 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6FA4A7BF2856D3A500846435 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -117,6 +119,7 @@
 		6CE96FF1285726BC00AD8C63 /* Present */ = {
 			isa = PBXGroup;
 			children = (
+				6CE9701D2859EAF400AD8C63 /* Common */,
 				6FA4A7C12856D3A500846435 /* LoginViewController.swift */,
 				6CE96FF82857362A00AD8C63 /* IdView.swift */,
 				6FEA98A52858815D00ABA34C /* GitTuulTabBarController.swift */,
@@ -151,6 +154,14 @@
 				6FEA989E28585CE200ABA34C /* GithubEntity.swift */,
 			);
 			path = Entity;
+			sourceTree = "<group>";
+		};
+		6CE9701D2859EAF400AD8C63 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				6CE9701E2859EAFE00AD8C63 /* PaddingLabel.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		6FA4A7B12856D3A500846435 = {
@@ -326,6 +337,7 @@
 				6CE97021285AF62A00AD8C63 /* ClientInformation.swift in Sources */,
 				6FEA989D285850D400ABA34C /* NetworkManager.swift in Sources */,
 				6FEA989F28585CE200ABA34C /* GithubEntity.swift in Sources */,
+				6CE9701F2859EAFE00AD8C63 /* PaddingLabel.swift in Sources */,
 				6FA4A7C02856D3A500846435 /* SceneDelegate.swift in Sources */,
 				6CE96FF42857282300AD8C63 /* UIColor+extension.swift in Sources */,
 				6FEA98A62858815D00ABA34C /* GitTuulTabBarController.swift in Sources */,
