@@ -19,8 +19,11 @@
 		6CE96FFD2858794900AD8C63 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE96FFC2858794900AD8C63 /* NetworkError.swift */; };
 		6CE96FFF2858797000AD8C63 /* GithubScope.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE96FFE2858797000AD8C63 /* GithubScope.swift */; };
 		6CE97001285879D000AD8C63 /* Requestable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE97000285879D000AD8C63 /* Requestable.swift */; };
-		6CE97021285AF62A00AD8C63 /* ClientInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE97020285AF62A00AD8C63 /* ClientInformation.swift */; };
+		6CE9700A28596FA400AD8C63 /* IssueViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE9700928596FA400AD8C63 /* IssueViewController.swift */; };
+		6CE9700C2859708700AD8C63 /* IssueHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE9700B2859708700AD8C63 /* IssueHeader.swift */; };
 		6CE9700E2859709900AD8C63 /* IssueCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE9700D2859709900AD8C63 /* IssueCell.swift */; };
+		6CE970112859712700AD8C63 /* LayoutFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE970102859712700AD8C63 /* LayoutFactory.swift */; };
+		6CE970132859719E00AD8C63 /* IssueViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE970122859719E00AD8C63 /* IssueViewDataSource.swift */; };
 		6CE970182859AC8F00AD8C63 /* LabelCollectionViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE970172859AC8F00AD8C63 /* LabelCollectionViewDataSource.swift */; };
 		6CE9701A2859ACC700AD8C63 /* LabelCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE970192859ACC700AD8C63 /* LabelCollectionViewCell.swift */; };
 		6CE9701F2859EAFE00AD8C63 /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE9701E2859EAFE00AD8C63 /* PaddingLabel.swift */; };
@@ -38,6 +41,7 @@
 		6FEA989D285850D400ABA34C /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FEA989C285850D400ABA34C /* NetworkManager.swift */; };
 		6FEA989F28585CE200ABA34C /* GithubEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FEA989E28585CE200ABA34C /* GithubEntity.swift */; };
 		6FEA98A1285861B500ABA34C /* GithubEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FEA98A0285861B500ABA34C /* GithubEndPoint.swift */; };
+		6FEA98A428587DEA00ABA34C /* ClientInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FEA98A328587DEA00ABA34C /* ClientInformation.swift */; };
 		6FEA98A62858815D00ABA34C /* GitTuulTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FEA98A52858815D00ABA34C /* GitTuulTabBarController.swift */; };
 /* End PBXBuildFile section */
 
@@ -54,8 +58,11 @@
 		6CE96FFC2858794900AD8C63 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		6CE96FFE2858797000AD8C63 /* GithubScope.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubScope.swift; sourceTree = "<group>"; };
 		6CE97000285879D000AD8C63 /* Requestable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requestable.swift; sourceTree = "<group>"; };
-		6CE97020285AF62A00AD8C63 /* ClientInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientInformation.swift; sourceTree = "<group>"; };
+		6CE9700928596FA400AD8C63 /* IssueViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueViewController.swift; sourceTree = "<group>"; };
+		6CE9700B2859708700AD8C63 /* IssueHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueHeader.swift; sourceTree = "<group>"; };
 		6CE9700D2859709900AD8C63 /* IssueCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueCell.swift; sourceTree = "<group>"; };
+		6CE970102859712700AD8C63 /* LayoutFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutFactory.swift; sourceTree = "<group>"; };
+		6CE970122859719E00AD8C63 /* IssueViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueViewDataSource.swift; sourceTree = "<group>"; };
 		6CE970172859AC8F00AD8C63 /* LabelCollectionViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelCollectionViewDataSource.swift; sourceTree = "<group>"; };
 		6CE970192859ACC700AD8C63 /* LabelCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelCollectionViewCell.swift; sourceTree = "<group>"; };
 		6CE9701E2859EAFE00AD8C63 /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
@@ -70,6 +77,7 @@
 		6FEA989C285850D400ABA34C /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		6FEA989E28585CE200ABA34C /* GithubEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubEntity.swift; sourceTree = "<group>"; };
 		6FEA98A0285861B500ABA34C /* GithubEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubEndPoint.swift; sourceTree = "<group>"; };
+		6FEA98A328587DEA00ABA34C /* ClientInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientInformation.swift; sourceTree = "<group>"; };
 		6FEA98A52858815D00ABA34C /* GitTuulTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitTuulTabBarController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -126,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				6CE9701D2859EAF400AD8C63 /* Common */,
+				6CE9700F2859711C00AD8C63 /* Support */,
 				6CE9700828596F7900AD8C63 /* IssueView */,
 				6FA4A7C12856D3A500846435 /* LoginViewController.swift */,
 				6CE96FF82857362A00AD8C63 /* IdView.swift */,
@@ -161,6 +170,27 @@
 				6FEA989E28585CE200ABA34C /* GithubEntity.swift */,
 			);
 			path = Entity;
+			sourceTree = "<group>";
+		};
+		6CE9700828596F7900AD8C63 /* IssueView */ = {
+			isa = PBXGroup;
+			children = (
+				6CE9700928596FA400AD8C63 /* IssueViewController.swift */,
+				6CE9700B2859708700AD8C63 /* IssueHeader.swift */,
+				6CE9700D2859709900AD8C63 /* IssueCell.swift */,
+				6CE970122859719E00AD8C63 /* IssueViewDataSource.swift */,
+				6CE970172859AC8F00AD8C63 /* LabelCollectionViewDataSource.swift */,
+				6CE970192859ACC700AD8C63 /* LabelCollectionViewCell.swift */,
+			);
+			path = IssueView;
+			sourceTree = "<group>";
+		};
+		6CE9700F2859711C00AD8C63 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				6CE970102859712700AD8C63 /* LayoutFactory.swift */,
+			);
+			path = Support;
 			sourceTree = "<group>";
 		};
 		6CE9701D2859EAF400AD8C63 /* Common */ = {
@@ -221,7 +251,7 @@
 		6FEA98A228587DC900ABA34C /* Private */ = {
 			isa = PBXGroup;
 			children = (
-				6CE97020285AF62A00AD8C63 /* ClientInformation.swift */,
+				6FEA98A328587DEA00ABA34C /* ClientInformation.swift */,
 			);
 			path = Private;
 			sourceTree = "<group>";
@@ -341,15 +371,19 @@
 				6FEA98A1285861B500ABA34C /* GithubEndPoint.swift in Sources */,
 				6CE970182859AC8F00AD8C63 /* LabelCollectionViewDataSource.swift in Sources */,
 				6CE96FFF2858797000AD8C63 /* GithubScope.swift in Sources */,
+				6CE970112859712700AD8C63 /* LayoutFactory.swift in Sources */,
 				6CE9700E2859709900AD8C63 /* IssueCell.swift in Sources */,
+				6FEA98A428587DEA00ABA34C /* ClientInformation.swift in Sources */,
 				6CE96FED2857234000AD8C63 /* UIFont+extension.swift in Sources */,
-				6CE97021285AF62A00AD8C63 /* ClientInformation.swift in Sources */,
 				6FEA989D285850D400ABA34C /* NetworkManager.swift in Sources */,
 				6FEA989F28585CE200ABA34C /* GithubEntity.swift in Sources */,
 				6CE9701F2859EAFE00AD8C63 /* PaddingLabel.swift in Sources */,
 				6FA4A7C02856D3A500846435 /* SceneDelegate.swift in Sources */,
+				6CE9700C2859708700AD8C63 /* IssueHeader.swift in Sources */,
 				6CE96FF42857282300AD8C63 /* UIColor+extension.swift in Sources */,
 				6FEA98A62858815D00ABA34C /* GitTuulTabBarController.swift in Sources */,
+				6CE9700A28596FA400AD8C63 /* IssueViewController.swift in Sources */,
+				6CE970132859719E00AD8C63 /* IssueViewDataSource.swift in Sources */,
 				6CE9701A2859ACC700AD8C63 /* LabelCollectionViewCell.swift in Sources */,
 				6CE97001285879D000AD8C63 /* Requestable.swift in Sources */,
 				6CE96FFD2858794900AD8C63 /* NetworkError.swift in Sources */,

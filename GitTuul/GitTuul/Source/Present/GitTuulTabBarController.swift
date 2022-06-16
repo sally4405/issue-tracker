@@ -26,7 +26,7 @@ private extension GitTuulTabBarController {
     }
 
     func setup() {
-        let issueViewController = UIViewController()
+        let issueViewController = IssueViewController()
         issueViewController.tabBarItem.title = "이슈"
         issueViewController.tabBarItem.image = UIImage(systemName: "exclamationmark.circle")
         issueViewController.tabBarItem.selectedImage = UIImage(systemName: "exclamationmark.circle.fill")
