@@ -2,12 +2,13 @@ import UIKit
 
 final class IdView: UIView {
 
+    // MARK: - View
+
     private let idLabel: UILabel = {
         let label = UILabel()
         label.text = "아이디"
         label.font = .SFProText.regular(17)
         label.tintColor = .Custom.label1
-
         return label
     }()
 
@@ -16,14 +17,12 @@ final class IdView: UIView {
         label.text = "비밀번호"
         label.font = .SFProText.regular(17)
         label.tintColor = .Custom.label1
-
         return label
     }()
 
     private let divider: UIView = {
         let view = UIView()
         view.backgroundColor = .GreyScale.grey5
-
         return view
     }()
 
@@ -31,7 +30,6 @@ final class IdView: UIView {
         let textField = UITextField()
         textField.font = .SFProText.regular(17)
         textField.tintColor = .GreyScale.black
-
         return textField
     }()
 
@@ -40,7 +38,6 @@ final class IdView: UIView {
         textField.font = .SFProText.regular(17)
         textField.tintColor = .GreyScale.black
         textField.isSecureTextEntry = true
-
         return textField
     }()
 
@@ -67,10 +64,12 @@ final class IdView: UIView {
 
 }
 
+// MARK: - View Layout
+
 private extension IdView {
 
     func layoutIdLabel() {
-        self.addSubview(idLabel)
+        addSubview(idLabel)
 
         idLabel.snp.makeConstraints { make in
             make.top.equalToSuperview().inset(12)
@@ -79,7 +78,7 @@ private extension IdView {
     }
 
     func layoutDivider() {
-        self.addSubview(divider)
+        addSubview(divider)
 
         divider.snp.makeConstraints { make in
             make.top.equalTo(idLabel.snp.bottom).offset(10.5)
@@ -90,7 +89,7 @@ private extension IdView {
     }
 
     func layoutPasswordLabel() {
-        self.addSubview(passwordLabel)
+        addSubview(passwordLabel)
 
         passwordLabel.snp.makeConstraints { make in
             make.top.equalTo(divider.snp.bottom).offset(10.5)
@@ -100,7 +99,7 @@ private extension IdView {
     }
 
     func layoutIdTextField() {
-        self.addSubview(idTextField)
+        addSubview(idTextField)
 
         idTextField.snp.makeConstraints { make in
             make.top.equalToSuperview()
@@ -111,7 +110,7 @@ private extension IdView {
     }
 
     func layoutPasswordTextField() {
-        self.addSubview(passwordTextField)
+        addSubview(passwordTextField)
 
         passwordTextField.snp.makeConstraints { make in
             make.top.equalTo(divider.snp.bottom)

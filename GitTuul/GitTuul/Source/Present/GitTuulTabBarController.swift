@@ -1,6 +1,6 @@
 import UIKit
 
-class GitTuulTabBarController: UITabBarController {
+final class GitTuulTabBarController: UITabBarController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -9,12 +9,9 @@ class GitTuulTabBarController: UITabBarController {
         setup()
     }
 
-    convenience init(data: GithubEntity) {
-        self.init()
-
-    }
-
 }
+
+// MARK: - Configure
 
 private extension GitTuulTabBarController {
 
@@ -25,7 +22,7 @@ private extension GitTuulTabBarController {
     }
 
     func setup() {
-        let issueViewController = UIViewController()
+        let issueViewController = ViewControllerFactory.issue.make()
         issueViewController.tabBarItem.title = "이슈"
         issueViewController.tabBarItem.image = UIImage(systemName: "exclamationmark.circle")
         issueViewController.tabBarItem.selectedImage = UIImage(systemName: "exclamationmark.circle.fill")
@@ -45,7 +42,7 @@ private extension GitTuulTabBarController {
         accountViewController.tabBarItem.image = UIImage(systemName: "person")
         accountViewController.tabBarItem.selectedImage = UIImage(systemName: "person.fill")
 
-        self.viewControllers = [issueViewController, labelViewController, milestoneViewController, accountViewController]
+        viewControllers = [issueViewController, labelViewController, milestoneViewController, accountViewController]
     }
 
 }

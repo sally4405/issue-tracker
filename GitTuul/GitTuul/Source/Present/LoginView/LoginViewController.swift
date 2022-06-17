@@ -1,7 +1,14 @@
 import UIKit
 import SnapKit
+import RxSwift
 
 final class LoginViewController: UIViewController {
+
+    let networkManager = NetworkManager.shared
+
+    var viewModel: LoginViewModel!
+
+    // MARK: - View
 
     private let titleLabel: UILabel = {
         let label = UILabel()
@@ -10,14 +17,12 @@ final class LoginViewController: UIViewController {
         label.tintColor = .GreyScale.black
         label.textAlignment = .center
         label.sizeToFit()
-
         return label
     }()
 
     private let idView: IdView = {
         let view = IdView()
         view.backgroundColor = .Custom.backgrounds1
-
         return view
     }()
 
@@ -34,20 +39,18 @@ final class LoginViewController: UIViewController {
             networkManager.requestCode(endPoint: endPoint)
         }
         button.addAction(action, for: .touchUpInside)
-
         return button
     }()
 
     private let appleLoginButton: UIButton = {
         let image = UIImage(systemName: "applelogo")
         let button = UIButton.filledAttributedButton("Apple 계정으로 로그인", image)
-
         return button
     }()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .Custom.backgrounds2
+        view.backgroundColor = .Custom.backgrounds2
 
         layoutIdView()
         layoutTitleLabel()
@@ -55,15 +58,22 @@ final class LoginViewController: UIViewController {
         layoutSignInButton()
         layoutAppleLoginButton()
         layoutGitHubLoginButton()
+    }
 
+    convenience init(viewModel: LoginViewModel) {
+        self.init()
+        self.viewModel = viewModel
+        subscribe()
     }
 
 }
 
+// MARK: - View Layout
+
 private extension LoginViewController {
 
     func layoutIdView() {
-        self.view.addSubview(idView)
+        view.addSubview(idView)
 
         idView.snp.makeConstraints { make in
             make.leading.trailing.equalToSuperview()
@@ -72,7 +82,7 @@ private extension LoginViewController {
     }
 
     func layoutTitleLabel() {
-        self.view.addSubview(titleLabel)
+        view.addSubview(titleLabel)
 
         titleLabel.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
@@ -82,41 +92,62 @@ private extension LoginViewController {
     }
 
     func layoutLoginButton() {
-        self.view.addSubview(logInButton)
+        view.addSubview(logInButton)
 
         logInButton.snp.makeConstraints { make in
             make.top.equalTo(idView.snp.bottom).offset(16)
-            make.trailing.equalTo(self.view.safeAreaLayoutGuide.snp.centerX)
+            make.trailing.equalTo(view.safeAreaLayoutGuide.snp.centerX)
         }
     }
 
     func layoutSignInButton() {
-        self.view.addSubview(signInButton)
+        view.addSubview(signInButton)
 
         signInButton.snp.makeConstraints { make in
             make.top.equalTo(idView.snp.bottom).offset(16)
-            make.leading.equalTo(self.view.safeAreaLayoutGuide.snp.centerX)
+            make.leading.equalTo(view.safeAreaLayoutGuide.snp.centerX)
         }
     }
 
     func layoutAppleLoginButton() {
-        self.view.addSubview(appleLoginButton)
+        view.addSubview(appleLoginButton)
 
         appleLoginButton.snp.makeConstraints { make in
-            make.bottom.equalTo(self.view.safeAreaLayoutGuide.snp.bottom).inset(14)
+            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom).inset(14)
             make.centerX.equalToSuperview()
             make.leading.trailing.equalToSuperview().inset(16)
         }
     }
 
     func layoutGitHubLoginButton() {
-        self.view.addSubview(gitHubLoginButton)
+        view.addSubview(gitHubLoginButton)
 
         gitHubLoginButton.snp.makeConstraints { make in
             make.bottom.equalTo(appleLoginButton.snp.top).offset(-14)
             make.centerX.equalToSuperview()
             make.height.equalTo(appleLoginButton.snp.height)
             make.leading.trailing.equalToSuperview().inset(16)
+        }
+    }
+
+}
+
+// MARK: - Subscribe
+
+private extension LoginViewController {
+
+    func subscribe() {
+        viewModel.subscribeEndpoint { [weak self] endPoint in
+            _ = self?.networkManager
+                .request(endPoint: endPoint)
+                .subscribe(
+                    onNext: { (data: GithubEntity) in
+                        self?.networkManager.setToken(data.accessToken)
+                        self?.navigationController?.pushViewController(ViewControllerFactory.tab.make(), animated: true)
+                    }, onError: { error in
+                        // MARK: - TODO 에러처리
+                    }
+                )
         }
     }
 

@@ -2,24 +2,25 @@ import Foundation
 import Alamofire
 
 enum GithubEndPoint: Requestable {
-
     case oauth(clientID: String, scope: [GitHubScope])
     case accessToken(clientID: String, clientSecret: String, code: String)
-
+    case issue
 }
 
 extension GithubEndPoint {
 
     var baseURL: URL? {
-        return URL(string: "https://github.com/login/oauth")
+        return URL(string: "https://github.com")
     }
 
     var path: String {
         switch self {
         case .oauth:
-            return "/authorize"
+            return "/login/oauth/authorize"
         case .accessToken:
-            return "/access_token"
+            return "/login/oauth/access_token"
+        case .issue:
+            return "/issues"
         }
     }
 
@@ -27,6 +28,8 @@ extension GithubEndPoint {
         switch self {
         case .accessToken:
             return [HTTPHeader.accept("application/json")]
+        case.issue:
+            return [HTTPHeader.accept("application/vnd.github.v3+json")]
         default:
             return [HTTPHeader.accept("")]
         }
@@ -42,6 +45,8 @@ extension GithubEndPoint {
             return ["client_id": clientID, "scope": scope]
         case .accessToken(let clientID, let clientSecret, let code):
             return ["client_id": clientID, "client_secret": clientSecret, "code": code]
+        default:
+            return [:]
         }
     }
 
@@ -51,6 +56,8 @@ extension GithubEndPoint {
             return .get
         case .accessToken:
             return .post
+        case.issue:
+            return .get
         }
     }
 

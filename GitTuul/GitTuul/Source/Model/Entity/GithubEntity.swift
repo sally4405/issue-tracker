@@ -1,6 +1,6 @@
 import Foundation
 
-struct GithubEntity: Codable {
+struct GithubEntity: Decodable {
     let accessToken, scope, tokenType: String
 
     enum CodingKeys: String, CodingKey {

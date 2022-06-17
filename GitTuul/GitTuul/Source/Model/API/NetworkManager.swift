@@ -6,6 +6,8 @@ final class NetworkManager {
 
     static var shared = NetworkManager()
 
+    private var token: String?
+
     private init() {}
 
     func requestCode(endPoint: Requestable) {
@@ -18,7 +20,6 @@ final class NetworkManager {
             UIApplication.shared.open(url)
         } else {
             // MARK: - TODO error처리
-            print(NetworkError.failToOpen)
         }
     }
 
@@ -29,10 +30,17 @@ final class NetworkManager {
                 return Disposables.create {}
             }
 
+            var headers: HTTPHeaders = endPoint.headers
+
+            if let token = self.token {
+                headers.add(HTTPHeader.authorization("token \(token)"))
+            }
+
             let request: DataRequest = AF.request(url,
                                                   method: endPoint.method,
                                                   parameters: endPoint.parameter,
-                                                  headers: endPoint.headers)
+                                                  headers: headers)
+
             request
                 .validate(statusCode: 200..<300)
                 .response { response in
@@ -52,4 +60,7 @@ final class NetworkManager {
         }
     }
 
+    func setToken(_ token: String) {
+        self.token = token
+    }
 }
