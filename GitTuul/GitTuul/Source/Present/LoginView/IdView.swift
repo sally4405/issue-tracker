@@ -51,7 +51,6 @@ final class IdView: UIView {
         layoutPasswordTextField()
     }
 
-    @available (*, unavailable)
     required init?(coder: NSCoder) {
         super.init(coder: coder)
 

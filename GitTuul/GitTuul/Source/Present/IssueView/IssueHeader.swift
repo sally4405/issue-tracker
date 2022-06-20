@@ -1,6 +1,6 @@
 import UIKit
 
-class IssueHeader: UICollectionReusableView {
+final class IssueHeader: UICollectionReusableView {
 
     static var identifier: String {
         return "\(self)"
@@ -11,7 +11,6 @@ class IssueHeader: UICollectionReusableView {
         configure()
     }
 
-    @available (*, unavailable)
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         configure()

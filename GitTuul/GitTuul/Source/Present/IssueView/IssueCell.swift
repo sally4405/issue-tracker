@@ -1,6 +1,6 @@
 import UIKit
 
-class IssueCell: UICollectionViewCell {
+final class IssueCell: UICollectionViewCell {
 
     static var identifier: String {
         return "\(self)"

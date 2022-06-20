@@ -1,6 +1,6 @@
 import UIKit
 
-class IssueViewController: UIViewController {
+final class IssueViewController: UIViewController {
 
     var viewModel: IssueViewModel!
 
