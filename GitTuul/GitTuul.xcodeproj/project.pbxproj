@@ -43,6 +43,9 @@
 		6FA4A7DA2856E07500846435 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 6FA4A7D92856E07500846435 /* Alamofire */; };
 		6FA4A7DD2856E0CC00846435 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 6FA4A7DC2856E0CC00846435 /* SnapKit */; };
 		6FA4A7E02856E1ED00846435 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 6FA4A7DF2856E1ED00846435 /* .swiftlint.yml */; };
+		6FE58D0A285C26E50053089F /* UserEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FE58D09285C26E50053089F /* UserEntity.swift */; };
+		6FE58D0D285C35670053089F /* RxDataSources in Frameworks */ = {isa = PBXBuildFile; productRef = 6FE58D0C285C35670053089F /* RxDataSources */; };
+		6FE58D11285C35940053089F /* Issue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FE58D10285C35940053089F /* Issue.swift */; };
 		6FEA989D285850D400ABA34C /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FEA989C285850D400ABA34C /* NetworkManager.swift */; };
 		6FEA989F28585CE200ABA34C /* GithubEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FEA989E28585CE200ABA34C /* GithubEntity.swift */; };
 		6FEA98A1285861B500ABA34C /* GithubEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FEA98A0285861B500ABA34C /* GithubEndPoint.swift */; };
@@ -84,6 +87,8 @@
 		6FA4A7C92856D3A900846435 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6FA4A7CB2856D3A900846435 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6FA4A7DF2856E1ED00846435 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		6FE58D09285C26E50053089F /* UserEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserEntity.swift; sourceTree = "<group>"; };
+		6FE58D10285C35940053089F /* Issue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Issue.swift; sourceTree = "<group>"; };
 		6FEA989C285850D400ABA34C /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		6FEA989E28585CE200ABA34C /* GithubEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubEntity.swift; sourceTree = "<group>"; };
 		6FEA98A0285861B500ABA34C /* GithubEndPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubEndPoint.swift; sourceTree = "<group>"; };
@@ -99,6 +104,7 @@
 				6FA4A7D72856E04500846435 /* RxSwift in Frameworks */,
 				6FA4A7DA2856E07500846435 /* Alamofire in Frameworks */,
 				6FA4A7D52856E04500846435 /* RxRelay in Frameworks */,
+				6FE58D0D285C35670053089F /* RxDataSources in Frameworks */,
 				6FA4A7D32856E04500846435 /* RxCocoa in Frameworks */,
 				6FA4A7DD2856E0CC00846435 /* SnapKit in Frameworks */,
 			);
@@ -178,6 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				6FEA989E28585CE200ABA34C /* GithubEntity.swift */,
+				6FE58D09285C26E50053089F /* UserEntity.swift */,
 				6CE97022285B070600AD8C63 /* IssueEntity.swift */,
 			);
 			path = Entity;
@@ -272,6 +279,7 @@
 		6FA4A7E12858506D00846435 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				6FE58D0E285C357F0053089F /* Domain */,
 				6CE9700328587A5400AD8C63 /* Entity */,
 				6FA4A7E22858507600846435 /* API */,
 			);
@@ -285,6 +293,14 @@
 				6CE9700228587A0500AD8C63 /* EndPoint */,
 			);
 			path = API;
+			sourceTree = "<group>";
+		};
+		6FE58D0E285C357F0053089F /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				6FE58D10285C35940053089F /* Issue.swift */,
+			);
+			path = Domain;
 			sourceTree = "<group>";
 		};
 		6FEA98A228587DC900ABA34C /* Private */ = {
@@ -318,6 +334,7 @@
 				6FA4A7D62856E04500846435 /* RxSwift */,
 				6FA4A7D92856E07500846435 /* Alamofire */,
 				6FA4A7DC2856E0CC00846435 /* SnapKit */,
+				6FE58D0C285C35670053089F /* RxDataSources */,
 			);
 			productName = GitTuul;
 			productReference = 6FA4A7BA2856D3A500846435 /* GitTuul.app */;
@@ -351,6 +368,7 @@
 				6FA4A7D12856E04500846435 /* XCRemoteSwiftPackageReference "RxSwift" */,
 				6FA4A7D82856E07500846435 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				6FA4A7DB2856E0CC00846435 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				6FE58D0B285C35670053089F /* XCRemoteSwiftPackageReference "RxDataSources" */,
 			);
 			productRefGroup = 6FA4A7BB2856D3A500846435 /* Products */;
 			projectDirPath = "";
@@ -415,6 +433,7 @@
 				6CE9702C285B1BBC00AD8C63 /* NotificationName+extension.swift in Sources */,
 				6CE970112859712700AD8C63 /* LayoutFactory.swift in Sources */,
 				6CE97028285B1A4E00AD8C63 /* LoginViewModel.swift in Sources */,
+				6FE58D0A285C26E50053089F /* UserEntity.swift in Sources */,
 				6CE9700E2859709900AD8C63 /* IssueCell.swift in Sources */,
 				6FEA98A428587DEA00ABA34C /* ClientInformation.swift in Sources */,
 				6CE96FED2857234000AD8C63 /* UIFont+extension.swift in Sources */,
@@ -422,6 +441,7 @@
 				6FEA989F28585CE200ABA34C /* GithubEntity.swift in Sources */,
 				6CE9701F2859EAFE00AD8C63 /* PaddingLabel.swift in Sources */,
 				6FA4A7C02856D3A500846435 /* SceneDelegate.swift in Sources */,
+				6FE58D11285C35940053089F /* Issue.swift in Sources */,
 				6CE9700C2859708700AD8C63 /* IssueHeader.swift in Sources */,
 				6CE96FF42857282300AD8C63 /* UIColor+extension.swift in Sources */,
 				6FEA98A62858815D00ABA34C /* GitTuulTabBarController.swift in Sources */,
@@ -665,6 +685,14 @@
 				minimumVersion = 5.0.0;
 			};
 		};
+		6FE58D0B285C35670053089F /* XCRemoteSwiftPackageReference "RxDataSources" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/RxSwiftCommunity/RxDataSources";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -692,6 +720,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 6FA4A7DB2856E0CC00846435 /* XCRemoteSwiftPackageReference "SnapKit" */;
 			productName = SnapKit;
+		};
+		6FE58D0C285C35670053089F /* RxDataSources */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6FE58D0B285C35670053089F /* XCRemoteSwiftPackageReference "RxDataSources" */;
+			productName = RxDataSources;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

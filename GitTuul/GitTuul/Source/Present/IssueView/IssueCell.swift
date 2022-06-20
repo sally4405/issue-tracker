@@ -1,4 +1,6 @@
 import UIKit
+import RxSwift
+import RxCocoa
 
 final class IssueCell: UICollectionViewCell {
 
@@ -32,6 +34,18 @@ final class IssueCell: UICollectionViewCell {
         label.sizeToFit()
         return label
     }()
+
+    private let labelList = BehaviorSubject<Label>(value: Label(name: "라벨이름", labelDescription: "라벨설명", color: "f29513"))
+
+    func setIssue(title: String, description: String, mileStone: String, labels: [Label]) {
+        titleLabel.text = title
+        descriptionLabel.text = description
+        mileStoneLabel.text = mileStone
+        _ = Observable.just(labels)
+            .bind(to: labelCollectionView.rx.items(cellIdentifier: LabelCollectionViewCell.identifier, cellType: LabelCollectionViewCell.self)) { index, item, cell in
+                cell.setLabel(item.name)
+            }
+    }
 
     private lazy var labelCollectionViewDataSource = LabelCollectionViewDataSource()
 

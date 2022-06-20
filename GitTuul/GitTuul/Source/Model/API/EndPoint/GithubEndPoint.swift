@@ -5,12 +5,18 @@ enum GithubEndPoint: Requestable {
     case oauth(clientID: String, scope: [GitHubScope])
     case accessToken(clientID: String, clientSecret: String, code: String)
     case issue
+    case user
 }
 
 extension GithubEndPoint {
 
     var baseURL: URL? {
-        return URL(string: "https://github.com")
+        switch self {
+        case .oauth, .accessToken:
+            return URL(string: "https://github.com")
+        default:
+            return URL(string: "https://api.github.com")
+        }
     }
 
     var path: String {
@@ -21,6 +27,8 @@ extension GithubEndPoint {
             return "/login/oauth/access_token"
         case .issue:
             return "/issues"
+        case .user:
+            return "/user"
         }
     }
 
@@ -28,7 +36,7 @@ extension GithubEndPoint {
         switch self {
         case .accessToken:
             return [HTTPHeader.accept("application/json")]
-        case.issue:
+        case .issue, .user:
             return [HTTPHeader.accept("application/vnd.github.v3+json")]
         default:
             return [HTTPHeader.accept("")]
@@ -42,7 +50,7 @@ extension GithubEndPoint {
     var parameter: [String: Any] {
         switch self {
         case .oauth(let clientID, let scope):
-            return ["client_id": clientID, "scope": scope]
+            return ["client_id": clientID, "scopes": scope]
         case .accessToken(let clientID, let clientSecret, let code):
             return ["client_id": clientID, "client_secret": clientSecret, "code": code]
         default:
@@ -57,6 +65,8 @@ extension GithubEndPoint {
         case .accessToken:
             return .post
         case.issue:
+            return .get
+        case .user:
             return .get
         }
     }

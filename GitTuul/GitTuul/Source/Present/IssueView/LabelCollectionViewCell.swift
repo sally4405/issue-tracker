@@ -11,6 +11,10 @@ final class LabelCollectionViewCell: UICollectionViewCell {
         return label
     }()
 
+    func setLabel(_ title: String) {
+        label = PaddingLabel(title: title, color: .Colors.primary2)
+    }
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         layoutLabel()

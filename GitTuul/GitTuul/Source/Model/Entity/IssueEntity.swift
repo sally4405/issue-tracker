@@ -10,10 +10,10 @@ struct IssueEntityElement: Codable {
     let number: Int
     let state, title, body: String
     let user: Assignee
-    let labels: [Label]
+    let labels: [LabelEntity]
     let assignee: Assignee
     let assignees: [Assignee]
-    let milestone: Milestone
+    let milestone: MilestoneEntity
     let locked: Bool
     let activeLockReason: String
     let comments: Int
@@ -81,7 +81,7 @@ struct Assignee: Codable {
 }
 
 // MARK: - Label
-struct Label: Codable {
+struct LabelEntity: Codable {
     let id: Int
     let nodeID: String
     let url: String
@@ -99,7 +99,7 @@ struct Label: Codable {
 }
 
 // MARK: - Milestone
-struct Milestone: Codable {
+struct MilestoneEntity: Codable {
     let url: String
     let htmlURL: String
     let labelsURL: String
@@ -321,5 +321,17 @@ class JSONNull: Codable, Hashable {
     public func encode(to encoder: Encoder) throws {
         var container = encoder.singleValueContainer()
         try container.encodeNil()
+    }
+}
+
+extension IssueEntityElement {
+    func toDomain() -> Issue {
+        return .init(title: title,
+                     description: body,
+                     mileStone: MileStone(title: milestone.title,
+                                          milestoneDescription: milestone.milestoneDescription),
+                     labels: labels.map { Label(name: $0.name,
+                                                labelDescription: $0.labelDescription,
+                                                color: $0.color) })
     }
 }

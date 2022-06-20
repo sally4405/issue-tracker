@@ -1,12 +1,28 @@
 import UIKit
+import RxSwift
+import RxCocoa
 
 final class GitTuulTabBarController: UITabBarController {
+
+    private let networkManager = NetworkManager.shared
+    private let disposeBag = DisposeBag()
+    private let userImage = BehaviorSubject<UIImage>(value: UIImage(systemName: "person") ?? UIImage())
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         configure()
         setup()
+
+        networkManager
+            .request(endPoint: GithubEndPoint.user)
+            .subscribe { (user: UserEntity) in
+                print(user)
+                self.userImage.onNext(UIImage(data: try! Data(contentsOf: URL(string: user.avatar_url)!)) ?? UIImage())
+            } onError: { error in
+                print("user: ", error)
+            }
+            .disposed(by: disposeBag)
     }
 
 }
@@ -39,8 +55,12 @@ private extension GitTuulTabBarController {
 
         let accountViewController = UIViewController()
         accountViewController.tabBarItem.title = "내 계정"
-        accountViewController.tabBarItem.image = UIImage(systemName: "person")
-        accountViewController.tabBarItem.selectedImage = UIImage(systemName: "person.fill")
+        userImage
+            .bind(to: accountViewController.tabBarItem.rx.image)
+            .disposed(by: disposeBag)
+        userImage
+            .bind(to: accountViewController.tabBarItem.rx.selectedImage)
+            .disposed(by: disposeBag)
 
         viewControllers = [issueViewController, labelViewController, milestoneViewController, accountViewController]
     }
