@@ -20,7 +20,7 @@ enum LayoutFactory {
             heightDimension: .estimated(1)
         )
         let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [item])
-        group.edgeSpacing = .init(leading: .none, top: .fixed(12), trailing: .none, bottom: .fixed(12))
+        group.edgeSpacing = .init(leading: .fixed(20), top: .fixed(12), trailing: .none, bottom: .fixed(12))
         let section = NSCollectionLayoutSection(group: group)
 
         section.boundarySupplementaryItems = [
@@ -31,8 +31,6 @@ enum LayoutFactory {
                 elementKind: UICollectionView.elementKindSectionHeader,
                 alignment: .topLeading)
         ]
-
-        section.contentInsets = .init(top: 0, leading: 20, bottom: 0, trailing: 0)
 
         return UICollectionViewCompositionalLayout(section: section)
     }
@@ -46,7 +44,6 @@ enum LayoutFactory {
         let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(100))
 
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
-        group.contentInsets = .init(top: 10, leading: 0, bottom: 0, trailing: 10)
 
         let section = NSCollectionLayoutSection(group: group)
 

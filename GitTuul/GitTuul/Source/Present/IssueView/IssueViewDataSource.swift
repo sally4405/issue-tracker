@@ -8,6 +8,7 @@ final class IssueViewDataSource: NSObject, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: IssueCell.identifier, for: indexPath) as? IssueCell else { return UICollectionViewCell() }
         cell.resizeHeight()
+        cell.sizeToFit()
         return cell
     }
 

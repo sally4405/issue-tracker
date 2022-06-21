@@ -70,7 +70,6 @@ private extension IssueCell {
         titleLabel.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(16)
             make.leading.trailing.equalToSuperview()
-            make.height.equalTo(titleLabel.intrinsicContentSize.height)
         }
     }
 
@@ -80,7 +79,6 @@ private extension IssueCell {
         descriptionLabel.snp.makeConstraints { make in
             make.top.equalTo(titleLabel.snp.bottom).offset(16)
             make.leading.trailing.equalToSuperview()
-            make.height.equalTo(descriptionLabel.intrinsicContentSize.height)
         }
     }
 
@@ -90,7 +88,6 @@ private extension IssueCell {
         mileStoneLabel.snp.makeConstraints { make in
             make.top.equalTo(descriptionLabel.snp.bottom).offset(16)
             make.leading.trailing.equalToSuperview()
-            make.height.equalTo(mileStoneLabel.intrinsicContentSize.height)
         }
     }
 
