@@ -3,12 +3,8 @@ import SnapKit
 import RxSwift
 
 final class LoginViewController: UIViewController {
-
     let networkManager = NetworkManager.shared
-
     var viewModel: LoginViewModel!
-
-    // MARK: - View
 
     private let titleLabel: UILabel = {
         let label = UILabel()
@@ -27,7 +23,6 @@ final class LoginViewController: UIViewController {
     }()
 
     private let logInButton = UIButton.plainAttributedButton("로그인")
-
     private let signInButton = UIButton.plainAttributedButton("회원가입")
 
     private let gitHubLoginButton: UIButton = {
@@ -65,13 +60,11 @@ final class LoginViewController: UIViewController {
         self.viewModel = viewModel
         subscribe()
     }
-
 }
 
 // MARK: - View Layout
 
 private extension LoginViewController {
-
     func layoutIdView() {
         view.addSubview(idView)
 
@@ -129,13 +122,11 @@ private extension LoginViewController {
             make.leading.trailing.equalToSuperview().inset(16)
         }
     }
-
 }
 
 // MARK: - Subscribe
 
 private extension LoginViewController {
-
     func subscribe() {
         viewModel.subscribeEndpoint { [weak self] endPoint in
             _ = self?.networkManager
@@ -150,5 +141,4 @@ private extension LoginViewController {
                 )
         }
     }
-
 }

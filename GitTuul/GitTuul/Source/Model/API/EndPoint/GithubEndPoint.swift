@@ -8,7 +8,6 @@ enum GithubEndPoint: Requestable {
 }
 
 extension GithubEndPoint {
-
     var baseURL: URL? {
         switch self {
         case .oauth, .accessToken:
@@ -65,5 +64,4 @@ extension GithubEndPoint {
             return .get
         }
     }
-
 }

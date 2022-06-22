@@ -1,20 +1,17 @@
 import UIKit
 
 final class GitTuulTabBarController: UITabBarController {
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
         configure()
         setup()
     }
-
 }
 
 // MARK: - Configure
 
 private extension GitTuulTabBarController {
-
     func configure() {
         tabBar.backgroundColor = .GreyScale.white
         tabBar.tintColor = .Colors.primary1
@@ -44,5 +41,4 @@ private extension GitTuulTabBarController {
 
         viewControllers = [issueViewController, labelViewController, milestoneViewController, accountViewController]
     }
-
 }

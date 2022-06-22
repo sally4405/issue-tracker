@@ -3,7 +3,6 @@ import RxCocoa
 import RxSwift
 
 final class IssueCell: UICollectionViewCell {
-
     static var identifier: String {
         return "\(self)"
     }
@@ -35,7 +34,6 @@ final class IssueCell: UICollectionViewCell {
     }()
 
     private lazy var labelCollectionViewDataSource = LabelCollectionViewDataSource()
-
     private lazy var labelCollectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: LayoutFactory.createLabelLayout())
         collectionView.register(LabelCollectionViewCell.self, forCellWithReuseIdentifier: LabelCollectionViewCell.identifier)
@@ -64,7 +62,6 @@ final class IssueCell: UICollectionViewCell {
 }
 
 private extension IssueCell {
-
     func layoutTitleLabel() {
         addSubview(titleLabel)
 
@@ -100,13 +97,11 @@ private extension IssueCell {
             make.leading.trailing.bottom.equalToSuperview()
         }
     }
-
 }
 
 // MARK: - Providing Function
 
 extension IssueCell {
-
     func resizeHeight() {
         labelCollectionView.snp.makeConstraints { make in
             make.height.equalTo(labelCollectionView.contentSize.height)
@@ -118,5 +113,4 @@ extension IssueCell {
         descriptionLabel.text = viewModel.body
         mileStoneLabel.text = viewModel.milestone
     }
-
 }

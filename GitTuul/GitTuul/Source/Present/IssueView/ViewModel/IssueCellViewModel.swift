@@ -2,7 +2,6 @@ import Foundation
 import RxSwift
 
 final class IssueCellViewModel {
-
     private let domain: Issue
 
     var title: String {

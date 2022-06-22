@@ -20,7 +20,6 @@ struct Issue {
 // MARK: - Providing Function
 
 extension Issue {
-
     var isSelected: Bool {
         return selected
     }
@@ -28,5 +27,4 @@ extension Issue {
     mutating func toggleSelected() {
         self.selected.toggle()
     }
-
 }

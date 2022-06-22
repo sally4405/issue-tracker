@@ -1,7 +1,6 @@
 import UIKit
 
 final class LabelCollectionViewCell: UICollectionViewCell {
-
     static var identifier: String {
         return "\(self)"
     }
@@ -25,7 +24,6 @@ final class LabelCollectionViewCell: UICollectionViewCell {
 // MARK: - View Layout
 
 private extension LabelCollectionViewCell {
-
     func layoutLabel() {
         addSubview(label)
 

@@ -2,7 +2,6 @@ import UIKit
 import RxSwift
 
 final class IssueViewController: UIViewController {
-
     var viewModel: IssueViewModel!
     private let disposebag = DisposeBag()
     private lazy var collectionViewDataSource = IssueViewDataSource(viewModel: self.viewModel)
@@ -28,30 +27,25 @@ final class IssueViewController: UIViewController {
         layoutCollectionView()
         subscribe()
     }
-
 }
 
 // MARK: - View Layout
 
 private extension IssueViewController {
-
     func layoutCollectionView() {
         view.addSubview(collectionView)
         collectionView.snp.makeConstraints { make in
             make.edges.equalToSuperview().inset(20)
         }
     }
-
 }
 
 // MARK: - Subscribe
 
 extension IssueViewController {
-
     func subscribe() {
         viewModel.didLoadedData.subscribe { [weak self] _ in
             self?.collectionView.reloadData()
         }.disposed(by: disposebag)
     }
-
 }

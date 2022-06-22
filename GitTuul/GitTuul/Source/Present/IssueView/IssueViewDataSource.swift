@@ -1,7 +1,6 @@
 import UIKit
 
 final class IssueViewDataSource: NSObject, UICollectionViewDataSource {
-
     var viewModel: IssueViewModel?
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -39,5 +38,4 @@ final class IssueViewDataSource: NSObject, UICollectionViewDataSource {
         self.init()
         self.viewModel = viewModel
     }
-
 }

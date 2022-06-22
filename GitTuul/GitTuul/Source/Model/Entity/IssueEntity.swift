@@ -19,7 +19,6 @@ struct IssueEntity: Decodable {
 // MARK: - Providing Function
 
 extension IssueEntity {
-
     func toDomain() -> Issue {
         return Issue(id: id,
                      title: title,
@@ -27,5 +26,4 @@ extension IssueEntity {
                      labels: labels.map { $0.toDomain() },
                      mileStone: mileStone?.toDomain())
     }
-
 }

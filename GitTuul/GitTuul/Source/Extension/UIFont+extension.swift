@@ -1,7 +1,6 @@
 import UIKit.UIFont
 
 extension UIFont {
-
     enum SFProDisplay {
         static let bold: (CGFloat) -> UIFont? = { (size) in
             return UIFont(name: "SFProDisplay-Bold", size: size)
@@ -25,5 +24,4 @@ extension UIFont {
     enum Baemin {
         static let kirangHaerang: UIFont? = UIFont(name: "BMKIRANGHAERANG-OTF", size: 48)
     }
-
 }

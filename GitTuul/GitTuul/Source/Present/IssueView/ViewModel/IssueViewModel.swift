@@ -3,7 +3,6 @@ import RxSwift
 import RxRelay
 
 final class IssueViewModel {
-
     let network = NetworkManager.shared
     let didLoadedData = PublishRelay<Void>()
     private let disposeBag = DisposeBag()
@@ -16,13 +15,11 @@ final class IssueViewModel {
     init() {
         configure()
     }
-
 }
 
 // MARK: - Configure
 
 private extension IssueViewModel {
-
     func configure() {
         let endPoint = GithubEndPoint.issue
 
@@ -33,15 +30,12 @@ private extension IssueViewModel {
             // MARK: - TODO error 처리
         }.disposed(by: disposeBag)
     }
-
 }
 
 // MARK: - Providing Function
 
 extension IssueViewModel {
-
     func cellViewModel(at indexPath: IndexPath) -> IssueCellViewModel {
         return viewModels[indexPath.section]
     }
-
 }

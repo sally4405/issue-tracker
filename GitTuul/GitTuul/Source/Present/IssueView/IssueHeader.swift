@@ -1,7 +1,6 @@
 import UIKit
 
 final class IssueHeader: UICollectionReusableView {
-
     static var identifier: String {
         return "\(self)"
     }
@@ -15,15 +14,12 @@ final class IssueHeader: UICollectionReusableView {
         super.init(coder: coder)
         configure()
     }
-
 }
 
 // MARK: - Configure
 
 private extension IssueHeader {
-
     func configure() {
         backgroundColor = .GreyScale.grey5
     }
-
 }

@@ -10,5 +10,4 @@ final class LabelCollectionViewDataSource: NSObject, UICollectionViewDataSource 
 
         return cell
     }
-
 }

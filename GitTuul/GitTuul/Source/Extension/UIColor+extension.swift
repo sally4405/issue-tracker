@@ -1,7 +1,6 @@
 import UIKit.UIColor
 
 extension UIColor {
-
     enum Custom {
         static let backgrounds1 = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
         static let backgrounds2 = UIColor(red: 0.95, green: 0.95, blue: 0.97, alpha: 1.0)
@@ -50,5 +49,4 @@ extension UIColor {
         static let succes2 = UIColor(red: 0.865, green: 1.0, blue: 0.903, alpha: 1.0)
         static let succes3 = UIColor(red: 0, green: 0.626, blue: 0.158, alpha: 1.0)
     }
-
 }

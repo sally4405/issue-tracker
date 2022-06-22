@@ -2,7 +2,6 @@ import UIKit.UIButton
 import UIKit.UIColor
 
 extension UIButton {
-
     static let plainAttributedButton: (String) -> UIButton = { title in
         var attribute = AttributedString.init(title)
         attribute.font = .SFProDisplay.semiBold(16)
@@ -33,5 +32,4 @@ extension UIButton {
 
         return button
     }
-
 }

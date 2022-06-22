@@ -1,9 +1,6 @@
 import UIKit
 
 final class IdView: UIView {
-
-    // MARK: - View
-
     private let idLabel: UILabel = {
         let label = UILabel()
         label.text = "아이디"
@@ -60,13 +57,11 @@ final class IdView: UIView {
         layoutIdTextField()
         layoutPasswordTextField()
     }
-
 }
 
 // MARK: - View Layout
 
 private extension IdView {
-
     func layoutIdLabel() {
         addSubview(idLabel)
 
@@ -119,5 +114,4 @@ private extension IdView {
             make.height.equalToSuperview().multipliedBy(0.5)
         }
     }
-
 }

@@ -8,9 +8,7 @@ struct MilestoneEntity: Decodable {
 // MARK: - Providing Function
 
 extension MilestoneEntity {
-
     func toDomain() -> Milestone {
         return Milestone(id: id, title: title)
     }
-
 }
