@@ -1,6 +1,6 @@
 import Foundation
 
-struct IssueEntityElement: Decodable {
+struct IssueEntity: Decodable {
     let id: Int
     let title: String
     let body: String
@@ -16,3 +16,16 @@ struct IssueEntityElement: Decodable {
     }
 }
 
+// MARK: - Providing Function
+
+extension IssueEntity {
+
+    func toDomain() -> Issue {
+        return Issue(id: id,
+                     title: title,
+                     body: body,
+                     labels: labels.map { $0.toDomain() },
+                     mileStone: mileStone?.toDomain())
+    }
+    
+}

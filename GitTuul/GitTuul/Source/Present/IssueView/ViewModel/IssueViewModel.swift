@@ -5,6 +5,8 @@ final class IssueViewModel {
 
     let network = NetworkManager.shared
 
+    private let viewModels: [IssueCellViewModel] = []
+
     private let disposeBag = DisposeBag()
 
     init() {
@@ -20,7 +22,7 @@ private extension IssueViewModel {
     func configure() {
         let endPoint = GithubEndPoint.issue
 
-        network.request(endPoint: endPoint).subscribe { (issue: [IssueEntityElement]) in
+        network.request(endPoint: endPoint).subscribe { (issue: [IssueEntity]) in
             // MARK: - TODO value 처리
         } onError: { error in
             // MARK: - TODO error 처리
