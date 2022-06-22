@@ -3,12 +3,12 @@ import Foundation
 struct Issue {
     let id: Int
     let title: String
-    let body: String
-    let labels: [Label]
+    let body: String?
+    let labels: [Label]?
     let milestone: Milestone?
     private var selected: Bool = false
 
-    init(id: Int, title: String, body: String, labels: [Label], mileStone: Milestone?) {
+    init(id: Int, title: String, body: String?, labels: [Label]?, mileStone: Milestone?) {
         self.id = id
         self.title = title
         self.body = body

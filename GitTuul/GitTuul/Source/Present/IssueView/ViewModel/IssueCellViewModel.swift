@@ -8,10 +8,10 @@ final class IssueCellViewModel {
         return self.domain.title
     }
     var body: String {
-        return self.domain.body
+        return self.domain.body ?? ""
     }
     var labels: [Label] {
-        return  self.domain.labels
+        return  self.domain.labels ?? []
     }
     var milestone: String {
         return  self.domain.milestone?.title ?? ""
