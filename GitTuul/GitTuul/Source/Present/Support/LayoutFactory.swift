@@ -20,7 +20,7 @@ enum LayoutFactory {
             heightDimension: .estimated(1)
         )
         let group = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitems: [item])
-        group.edgeSpacing = .init(leading: .fixed(20), top: .fixed(12), trailing: .none, bottom: .fixed(12))
+        group.edgeSpacing = .init(leading: .none, top: .fixed(12), trailing: .none, bottom: .fixed(12))
         let section = NSCollectionLayoutSection(group: group)
 
         section.boundarySupplementaryItems = [

@@ -27,5 +27,5 @@ extension IssueEntity {
                      labels: labels.map { $0.toDomain() },
                      mileStone: mileStone?.toDomain())
     }
-    
+
 }

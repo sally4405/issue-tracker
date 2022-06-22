@@ -12,5 +12,5 @@ extension MilestoneEntity {
     func toDomain() -> Milestone {
         return Milestone(id: id, title: title)
     }
-    
+
 }

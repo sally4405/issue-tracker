@@ -1,4 +1,6 @@
 import UIKit
+import RxCocoa
+import RxSwift
 
 final class IssueCell: UICollectionViewCell {
 
@@ -6,9 +8,10 @@ final class IssueCell: UICollectionViewCell {
         return "\(self)"
     }
 
+    private let disposebag = DisposeBag()
+
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "제목"
         label.font = .SFProDisplay.bold(22)
         label.textColor = .GreyScale.black
         label.sizeToFit()
@@ -17,7 +20,6 @@ final class IssueCell: UICollectionViewCell {
 
     private lazy var descriptionLabel: UILabel = {
         let label = UILabel()
-        label.text = "이슈에 대한 설명"
         label.font = .SFProDisplay.regular(17)
         label.textColor = .GreyScale.grey1
         label.sizeToFit()
@@ -26,7 +28,6 @@ final class IssueCell: UICollectionViewCell {
 
     private lazy var mileStoneLabel: UILabel = {
         let label = UILabel()
-        label.text = "〒마일스톤 이름"
         label.font = .SFProDisplay.regular(17)
         label.textColor = .GreyScale.grey1
         label.sizeToFit()
@@ -110,6 +111,12 @@ extension IssueCell {
         labelCollectionView.snp.makeConstraints { make in
             make.height.equalTo(labelCollectionView.contentSize.height)
         }
+    }
+
+    func configure(with viewModel: IssueCellViewModel) {
+        titleLabel.text = viewModel.title
+        descriptionLabel.text = viewModel.body
+        mileStoneLabel.text = viewModel.milestone
     }
 
 }

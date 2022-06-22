@@ -5,7 +5,7 @@ struct Issue {
     let title: String
     let body: String
     let labels: [Label]
-    let mileStone: Milestone?
+    let milestone: Milestone?
     private var selected: Bool = false
 
     init(id: Int, title: String, body: String, labels: [Label], mileStone: Milestone?) {
@@ -13,7 +13,7 @@ struct Issue {
         self.title = title
         self.body = body
         self.labels = labels
-        self.mileStone = mileStone
+        self.milestone = mileStone
     }
 }
 
@@ -28,5 +28,5 @@ extension Issue {
     mutating func toggleSelected() {
         self.selected.toggle()
     }
-    
+
 }
