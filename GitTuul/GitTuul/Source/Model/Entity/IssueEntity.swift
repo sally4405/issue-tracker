@@ -5,13 +5,13 @@ struct IssueEntity: Decodable {
     let title: String
     let body: String?
     let labels: [LabelEntity]?
-    let mileStone: MilestoneEntity?
+    let milestone: MilestoneEntity?
 
     enum CodingKeys: String, CodingKey {
         case id
         case title
         case body
-        case mileStone = "milestone"
+        case milestone
         case labels
     }
 }
@@ -24,6 +24,6 @@ extension IssueEntity {
                      title: title,
                      body: body,
                      labels: labels?.map { $0.toDomain() },
-                     mileStone: mileStone?.toDomain())
+                     milestone: milestone?.toDomain())
     }
 }

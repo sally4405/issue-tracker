@@ -30,7 +30,7 @@ final class LoginViewController: UIViewController {
         let button = UIButton.filledAttributedButton("GitHub 계정으로 로그인", image)
         let action = UIAction { _ in
             let networkManager = NetworkManager.shared,
-                endPoint = GithubEndPoint.oauth(clientID: ClientInformation.clientID, scope: [.repo, .user])
+                endPoint = GithubEndPoint.oauth(clientID: ClientInformation.clientID, scopes: [.repo, .user])
             networkManager.requestCode(endPoint: endPoint)
         }
         button.addAction(action, for: .touchUpInside)

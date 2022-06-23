@@ -8,12 +8,12 @@ struct Issue {
     let milestone: Milestone?
     private var selected: Bool = false
 
-    init(id: Int, title: String, body: String?, labels: [Label]?, mileStone: Milestone?) {
+    init(id: Int, title: String, body: String?, labels: [Label]?, milestone: Milestone?) {
         self.id = id
         self.title = title
         self.body = body
         self.labels = labels
-        self.milestone = mileStone
+        self.milestone = milestone
     }
 }
 
