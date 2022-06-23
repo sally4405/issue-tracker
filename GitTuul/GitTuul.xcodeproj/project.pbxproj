@@ -32,6 +32,12 @@
 		6CE97028285B1A4E00AD8C63 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE97027285B1A4E00AD8C63 /* LoginViewModel.swift */; };
 		6CE9702C285B1BBC00AD8C63 /* NotificationName+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE9702B285B1BBC00AD8C63 /* NotificationName+extension.swift */; };
 		6CE9702E285B1EE500AD8C63 /* ViewControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE9702D285B1EE500AD8C63 /* ViewControllerFactory.swift */; };
+		6CE970332861B78400AD8C63 /* MilestoneEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE970322861B78400AD8C63 /* MilestoneEntity.swift */; };
+		6CE970352861B79A00AD8C63 /* LabelEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE970342861B79A00AD8C63 /* LabelEntity.swift */; };
+		6CE970372862DBC800AD8C63 /* IssueCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE970362862DBC800AD8C63 /* IssueCellViewModel.swift */; };
+		6CE9703A2862DE9800AD8C63 /* Issue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE970392862DE9800AD8C63 /* Issue.swift */; };
+		6CE9703C2862DFE600AD8C63 /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE9703B2862DFE600AD8C63 /* Label.swift */; };
+		6CE9703E2862E03300AD8C63 /* Milestone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CE9703D2862E03300AD8C63 /* Milestone.swift */; };
 		6FA4A7BE2856D3A500846435 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FA4A7BD2856D3A500846435 /* AppDelegate.swift */; };
 		6FA4A7C02856D3A500846435 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FA4A7BF2856D3A500846435 /* SceneDelegate.swift */; };
 		6FA4A7C22856D3A500846435 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FA4A7C12856D3A500846435 /* LoginViewController.swift */; };
@@ -76,6 +82,12 @@
 		6CE97027285B1A4E00AD8C63 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		6CE9702B285B1BBC00AD8C63 /* NotificationName+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NotificationName+extension.swift"; sourceTree = "<group>"; };
 		6CE9702D285B1EE500AD8C63 /* ViewControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerFactory.swift; sourceTree = "<group>"; };
+		6CE970322861B78400AD8C63 /* MilestoneEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MilestoneEntity.swift; sourceTree = "<group>"; };
+		6CE970342861B79A00AD8C63 /* LabelEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelEntity.swift; sourceTree = "<group>"; };
+		6CE970362862DBC800AD8C63 /* IssueCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IssueCellViewModel.swift; sourceTree = "<group>"; };
+		6CE970392862DE9800AD8C63 /* Issue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Issue.swift; sourceTree = "<group>"; };
+		6CE9703B2862DFE600AD8C63 /* Label.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
+		6CE9703D2862E03300AD8C63 /* Milestone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Milestone.swift; sourceTree = "<group>"; };
 		6FA4A7BA2856D3A500846435 /* GitTuul.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitTuul.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FA4A7BD2856D3A500846435 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6FA4A7BF2856D3A500846435 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -179,6 +191,8 @@
 			children = (
 				6FEA989E28585CE200ABA34C /* GithubEntity.swift */,
 				6CE97022285B070600AD8C63 /* IssueEntity.swift */,
+				6CE970322861B78400AD8C63 /* MilestoneEntity.swift */,
+				6CE970342861B79A00AD8C63 /* LabelEntity.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -218,6 +232,7 @@
 			isa = PBXGroup;
 			children = (
 				6CE97025285B095200AD8C63 /* IssueViewModel.swift */,
+				6CE970362862DBC800AD8C63 /* IssueCellViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -238,6 +253,16 @@
 				6CE97027285B1A4E00AD8C63 /* LoginViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		6CE970382862DE9100AD8C63 /* Domain */ = {
+			isa = PBXGroup;
+			children = (
+				6CE970392862DE9800AD8C63 /* Issue.swift */,
+				6CE9703B2862DFE600AD8C63 /* Label.swift */,
+				6CE9703D2862E03300AD8C63 /* Milestone.swift */,
+			);
+			path = Domain;
 			sourceTree = "<group>";
 		};
 		6FA4A7B12856D3A500846435 = {
@@ -272,6 +297,7 @@
 		6FA4A7E12858506D00846435 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				6CE970382862DE9100AD8C63 /* Domain */,
 				6CE9700328587A5400AD8C63 /* Entity */,
 				6FA4A7E22858507600846435 /* API */,
 			);
@@ -410,6 +436,7 @@
 				6CE97026285B095200AD8C63 /* IssueViewModel.swift in Sources */,
 				6FA4A7BE2856D3A500846435 /* AppDelegate.swift in Sources */,
 				6FEA98A1285861B500ABA34C /* GithubEndPoint.swift in Sources */,
+				6CE9703E2862E03300AD8C63 /* Milestone.swift in Sources */,
 				6CE970182859AC8F00AD8C63 /* LabelCollectionViewDataSource.swift in Sources */,
 				6CE96FFF2858797000AD8C63 /* GithubScope.swift in Sources */,
 				6CE9702C285B1BBC00AD8C63 /* NotificationName+extension.swift in Sources */,
@@ -419,6 +446,7 @@
 				6FEA98A428587DEA00ABA34C /* ClientInformation.swift in Sources */,
 				6CE96FED2857234000AD8C63 /* UIFont+extension.swift in Sources */,
 				6FEA989D285850D400ABA34C /* NetworkManager.swift in Sources */,
+				6CE9703A2862DE9800AD8C63 /* Issue.swift in Sources */,
 				6FEA989F28585CE200ABA34C /* GithubEntity.swift in Sources */,
 				6CE9701F2859EAFE00AD8C63 /* PaddingLabel.swift in Sources */,
 				6FA4A7C02856D3A500846435 /* SceneDelegate.swift in Sources */,
@@ -426,12 +454,16 @@
 				6CE96FF42857282300AD8C63 /* UIColor+extension.swift in Sources */,
 				6FEA98A62858815D00ABA34C /* GitTuulTabBarController.swift in Sources */,
 				6CE9700A28596FA400AD8C63 /* IssueViewController.swift in Sources */,
+				6CE970352861B79A00AD8C63 /* LabelEntity.swift in Sources */,
 				6CE97023285B070600AD8C63 /* IssueEntity.swift in Sources */,
 				6CE970132859719E00AD8C63 /* IssueViewDataSource.swift in Sources */,
+				6CE9703C2862DFE600AD8C63 /* Label.swift in Sources */,
+				6CE970372862DBC800AD8C63 /* IssueCellViewModel.swift in Sources */,
 				6CE9701A2859ACC700AD8C63 /* LabelCollectionViewCell.swift in Sources */,
 				6CE97001285879D000AD8C63 /* Requestable.swift in Sources */,
 				6CE96FFD2858794900AD8C63 /* NetworkError.swift in Sources */,
 				6CE96FFB28574CB700AD8C63 /* UIButton+extension.swift in Sources */,
+				6CE970332861B78400AD8C63 /* MilestoneEntity.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -2,20 +2,16 @@ import Foundation
 import RxSwift
 
 final class LoginViewModel {
-
     let networkManager = NetworkManager.shared
-
     let endPoint = PublishSubject<GithubEndPoint>()
     private let disposeBag = DisposeBag()
 
     init() {
         addObserver()
     }
-
 }
 
 private extension LoginViewModel {
-
     func addObserver() {
         NotificationCenter.default.addObserver(forName: .didGetURLContexts,
                                                object: nil,
@@ -27,13 +23,11 @@ private extension LoginViewModel {
             self.endPoint.onNext(endPoint)
         }
     }
-
 }
 
 // MARK: - Providing Function
 
 extension LoginViewModel {
-
     func subscribeEndpoint(completion: @escaping (GithubEndPoint) -> Void) {
         endPoint.subscribe(onNext: completion).disposed(by: disposeBag)
     }

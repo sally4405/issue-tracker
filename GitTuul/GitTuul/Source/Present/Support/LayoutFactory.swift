@@ -1,4 +1,3 @@
-import Foundation
 import UIKit
 
 enum LayoutFactory {
@@ -33,8 +32,6 @@ enum LayoutFactory {
                 alignment: .topLeading)
         ]
 
-        section.contentInsets = .init(top: 0, leading: 20, bottom: 0, trailing: 0)
-
         return UICollectionViewCompositionalLayout(section: section)
     }
 
@@ -47,7 +44,6 @@ enum LayoutFactory {
         let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(100))
 
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
-        group.contentInsets = .init(top: 10, leading: 0, bottom: 0, trailing: 10)
 
         let section = NSCollectionLayoutSection(group: group)
 

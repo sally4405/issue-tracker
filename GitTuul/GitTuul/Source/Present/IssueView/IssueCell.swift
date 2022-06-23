@@ -1,14 +1,16 @@
 import UIKit
+import RxCocoa
+import RxSwift
 
-class IssueCell: UICollectionViewCell {
-
+final class IssueCell: UICollectionViewCell {
     static var identifier: String {
         return "\(self)"
     }
 
+    private let disposebag = DisposeBag()
+
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "제목"
         label.font = .SFProDisplay.bold(22)
         label.textColor = .GreyScale.black
         label.sizeToFit()
@@ -17,7 +19,6 @@ class IssueCell: UICollectionViewCell {
 
     private lazy var descriptionLabel: UILabel = {
         let label = UILabel()
-        label.text = "이슈에 대한 설명"
         label.font = .SFProDisplay.regular(17)
         label.textColor = .GreyScale.grey1
         label.sizeToFit()
@@ -26,7 +27,6 @@ class IssueCell: UICollectionViewCell {
 
     private lazy var mileStoneLabel: UILabel = {
         let label = UILabel()
-        label.text = "〒마일스톤 이름"
         label.font = .SFProDisplay.regular(17)
         label.textColor = .GreyScale.grey1
         label.sizeToFit()
@@ -34,7 +34,6 @@ class IssueCell: UICollectionViewCell {
     }()
 
     private lazy var labelCollectionViewDataSource = LabelCollectionViewDataSource()
-
     private lazy var labelCollectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: LayoutFactory.createLabelLayout())
         collectionView.register(LabelCollectionViewCell.self, forCellWithReuseIdentifier: LabelCollectionViewCell.identifier)
@@ -63,14 +62,12 @@ class IssueCell: UICollectionViewCell {
 }
 
 private extension IssueCell {
-
     func layoutTitleLabel() {
         addSubview(titleLabel)
 
         titleLabel.snp.makeConstraints { make in
             make.top.equalToSuperview().offset(16)
             make.leading.trailing.equalToSuperview()
-            make.height.equalTo(titleLabel.intrinsicContentSize.height)
         }
     }
 
@@ -80,7 +77,6 @@ private extension IssueCell {
         descriptionLabel.snp.makeConstraints { make in
             make.top.equalTo(titleLabel.snp.bottom).offset(16)
             make.leading.trailing.equalToSuperview()
-            make.height.equalTo(descriptionLabel.intrinsicContentSize.height)
         }
     }
 
@@ -90,7 +86,6 @@ private extension IssueCell {
         mileStoneLabel.snp.makeConstraints { make in
             make.top.equalTo(descriptionLabel.snp.bottom).offset(16)
             make.leading.trailing.equalToSuperview()
-            make.height.equalTo(mileStoneLabel.intrinsicContentSize.height)
         }
     }
 
@@ -102,17 +97,20 @@ private extension IssueCell {
             make.leading.trailing.bottom.equalToSuperview()
         }
     }
-
 }
 
 // MARK: - Providing Function
 
 extension IssueCell {
-
     func resizeHeight() {
         labelCollectionView.snp.makeConstraints { make in
             make.height.equalTo(labelCollectionView.contentSize.height)
         }
     }
 
+    func configure(with viewModel: IssueCellViewModel) {
+        titleLabel.text = viewModel.title
+        descriptionLabel.text = viewModel.body
+        mileStoneLabel.text = viewModel.milestone
+    }
 }

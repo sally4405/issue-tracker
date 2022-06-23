@@ -1,11 +1,10 @@
 import UIKit
+import RxSwift
 
-class IssueViewController: UIViewController {
-
+final class IssueViewController: UIViewController {
     var viewModel: IssueViewModel!
-
-    private lazy var collectionViewDataSource = IssueViewDataSource()
-
+    private let disposebag = DisposeBag()
+    private lazy var collectionViewDataSource = IssueViewDataSource(viewModel: self.viewModel)
     private lazy var collectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: LayoutFactory.createIssueLayout())
         collectionView.register(IssueCell.self, forCellWithReuseIdentifier: IssueCell.identifier)
@@ -26,19 +25,28 @@ class IssueViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         layoutCollectionView()
+        bind()
     }
-
 }
 
 // MARK: - View Layout
 
 private extension IssueViewController {
-
     func layoutCollectionView() {
         view.addSubview(collectionView)
         collectionView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+            make.edges.equalToSuperview().inset(20)
         }
     }
+}
 
+// MARK: - bind
+
+extension IssueViewController {
+    func bind() {
+        viewModel.didLoadedData
+            .subscribe { [weak self] _ in
+            self?.collectionView.reloadData()
+        }.disposed(by: disposebag)
+    }
 }

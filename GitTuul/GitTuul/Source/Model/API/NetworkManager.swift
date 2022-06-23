@@ -3,12 +3,10 @@ import UIKit
 import RxSwift
 
 final class NetworkManager {
-
     static var shared = NetworkManager()
+    private init() {}
 
     private var token: String?
-
-    private init() {}
 
     func requestCode(endPoint: Requestable) {
         guard let url = endPoint.url, var components = URLComponents(url: url, resolvingAgainstBaseURL: true) else { return }
