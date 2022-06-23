@@ -13,7 +13,7 @@ final class PaddingLabel: UILabel {
 
     convenience init(title: String, color: UIColor) {
         self.init()
-        layout(title: title, color: color)
+        configure(title: title, color: color)
     }
 
     override func drawText(in rect: CGRect) {
@@ -21,10 +21,10 @@ final class PaddingLabel: UILabel {
     }
 }
 
-// MARK: - Layout Section
+// MARK: - Configure
 
 private extension PaddingLabel {
-    func layout(title: String, color: UIColor) {
+    func configure(title: String, color: UIColor) {
         translatesAutoresizingMaskIntoConstraints = false
         text = title
         font = .SFProDisplay.regular(17)
