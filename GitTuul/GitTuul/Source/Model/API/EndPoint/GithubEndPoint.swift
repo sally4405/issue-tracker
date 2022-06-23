@@ -2,7 +2,7 @@ import Foundation
 import Alamofire
 
 enum GithubEndPoint: Requestable {
-    case oauth(clientID: String, scope: [GitHubScope])
+    case oauth(clientID: String, scopes: [GitHubScope])
     case accessToken(clientID: String, clientSecret: String, code: String)
     case issue
 }
@@ -45,8 +45,8 @@ extension GithubEndPoint {
 
     var parameter: [String: Any] {
         switch self {
-        case .oauth(let clientID, let scope):
-            return ["client_id": clientID, "scopes": scope]
+        case .oauth(let clientID, let scopes):
+            return ["client_id": clientID, "scopes": scopes]
         case .accessToken(let clientID, let clientSecret, let code):
             return ["client_id": clientID, "client_secret": clientSecret, "code": code]
         default:
