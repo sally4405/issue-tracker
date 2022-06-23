@@ -25,7 +25,7 @@ final class IssueViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         layoutCollectionView()
-        subscribe()
+        bind()
     }
 }
 
@@ -40,11 +40,12 @@ private extension IssueViewController {
     }
 }
 
-// MARK: - Subscribe
+// MARK: - bind
 
 extension IssueViewController {
-    func subscribe() {
-        viewModel.didLoadedData.subscribe { [weak self] _ in
+    func bind() {
+        viewModel.didLoadedData
+            .subscribe { [weak self] _ in
             self?.collectionView.reloadData()
         }.disposed(by: disposebag)
     }
