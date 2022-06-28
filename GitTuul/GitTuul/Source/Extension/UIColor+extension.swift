@@ -50,3 +50,23 @@ extension UIColor {
         static let succes3 = UIColor(red: 0, green: 0.626, blue: 0.158, alpha: 1.0)
     }
 }
+
+extension UIColor {
+    convenience init?(hex: String) {
+        let r, g, b: CGFloat
+        let a: CGFloat = 1.0
+
+        let scanner = Scanner(string: hex)
+        var hexNumber: UInt64 = 0
+
+        if scanner.scanHexInt64(&hexNumber) {
+            r = CGFloat((hexNumber & 0xff0000) >> 16) / 255
+            g = CGFloat((hexNumber & 0x00ff00) >> 8) / 255
+            b = CGFloat(hexNumber & 0x0000ff) / 255
+            self.init(red: r, green: g, blue: b, alpha: a)
+            return
+        }
+        
+        return nil
+    }
+}

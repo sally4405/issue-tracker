@@ -22,6 +22,7 @@ final class IssueCell: UICollectionViewCell {
         label.font = .SFProDisplay.regular(17)
         label.textColor = .GreyScale.grey1
         label.sizeToFit()
+        label.numberOfLines = 2
         return label
     }()
 
@@ -94,6 +95,7 @@ private extension IssueCell {
 
         labelCollectionView.snp.makeConstraints { make in
             make.top.equalTo(mileStoneLabel.snp.bottom).offset(16)
+            make.height.equalTo(80)
             make.leading.trailing.bottom.equalToSuperview()
         }
     }
@@ -103,14 +105,14 @@ private extension IssueCell {
 
 extension IssueCell {
     func resizeHeight() {
-        labelCollectionView.snp.makeConstraints { make in
-            make.height.equalTo(labelCollectionView.contentSize.height)
-        }
     }
 
     func configure(with viewModel: IssueCellViewModel) {
         titleLabel.text = viewModel.title
         descriptionLabel.text = viewModel.body
         mileStoneLabel.text = viewModel.milestone
+        labelCollectionViewDataSource.setLabels(to: viewModel.labels)
+        labelCollectionView.reloadData()
+        resizeHeight()
     }
 }

@@ -32,3 +32,12 @@ private extension LabelCollectionViewCell {
         }
     }
 }
+
+// MARK: - Providing Function
+
+extension LabelCollectionViewCell {
+    func configure(with model: Label) {
+        label.text = model.name
+        label.backgroundColor = UIColor(hex: model.color)
+    }
+}

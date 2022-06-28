@@ -12,7 +12,6 @@ final class IssueViewDataSource: NSObject, UICollectionViewDataSource {
         if let cellViewModel = viewModel?.cellViewModel(at: indexPath) {
             cell.configure(with: cellViewModel)
         }
-        cell.resizeHeight()
         cell.sizeToFit()
         return cell
     }
